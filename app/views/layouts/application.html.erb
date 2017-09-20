@@ -13,19 +13,108 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <body>
-    <nav>
-      <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Contact</li>
-      </ul>
+  <body class="anchor-top">
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid navbar-main">
+       <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse-connect" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">möbi</a>
+        </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="nav-collapse-connect">
+          <ul class="nav navbar-nav">
+            <li><a href="#">Dining</a></li>
+            <li><a href="#">Living</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lighting<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Floor Lamps</a></li>
+                <li><a href="#">Table Lamps</a></li>
+                <li><a href="#">Lamp Accesoires</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Bulbs</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">electricity</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-heart"></span></a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
     </nav>
+
 
     <%= yield %>
 
-    <footer>
-      &copy; 2017 Bike Berlin
+    <div class="anchor-bottom"></div>
+    <footer class="footer">
+      <div class="container">
+        <!-- search form -->
+        <div class="row">
+          <div class="col-sm-6">
+            <h3>Find your favorite product!</h3>
+          </div><!-- /.col-lg-6 -->
+          <div class="col-sm-6">
+            <div class="input-group searchform">
+              <input type="text" class="form-control" placeholder="Search for...">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+              </span>
+            </div><!-- /input-group -->
+          </div><!-- /.col-lg-6 -->
+        </div><!-- /.row -->
+        <hr>
+        <section class="footer-accordion">
+          <!-- accordion -->
+          <a class="footer-nav-btn" role="button" data-toggle="collapse" href="#footernav" aria-expanded="false" aria-controls="footernav">
+            <h4>About us &amp; our Services <span class="caret"></span></h4>
+          </a>
+          <div class="collapse text text-center" id="footernav">
+            <div class="row">
+              <div class="col-sm-3">
+                <h5>About</h5>
+                <ul>
+                  <li><a href="#">Our Story</a></li>
+                  <li><a href="#">Visit us</a></li>
+                  <li><a href="#">Terms &amp; conditions</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-3">
+                <h5>Service</h5>
+                <ul>
+                  <li><a href="#">FAQ</a></li>
+                  <li><a href="#">Delivery</a></li>
+                  <li><a href="#">Returns</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-3">
+                <h5>Call us</h5>
+                <p>005-555-555</p>
+              </div>
+              <div class="col-sm-3">
+                <h5>New Customer Discount</h5>
+                <p>10% off your first purchase</p>
+              </div>
+            </div>
+          </div><!-- /.footernav -->
+        </section>
+        <section class="footer-baseline">  
+          <p class="text-muted copyright-text">&copy; 2017 möbi</p>
+        </section>
+      </div>
     </footer>
+
   </body>
 </html>

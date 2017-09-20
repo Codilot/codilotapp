@@ -4,12 +4,102 @@
 // Font Variables
 $font-stack: 'Muli', sans-serif; 
 
+//Colors
+$primary-color: rgba(245, 245, 245, 1);
+$secondary-color: rgba(175, 171, 165, 1);
+$highlight-color: rgba(239, 127, 127, 1);
+$emphasis-color: rgba(102, 163, 153, 1);
+
 // Styles
 body {
   font-family: $font-stack;
   font-weight: 300;
+  color: $secondary-color;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
+  font-weight: 900;
+  color: $secondary-color;
+}
+
+h4, h5 {
+  text-transform: uppercase;
+}
+
+a,
+a:active,
+a:focus {
+  color: $highlight-color;
+}
+
+a:hover,
+a:visited {
+  color: $emphasis-color;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: $primary-color;
+  }
+
+//Content distance for fixed nav and footer
+.anchor-top {
+  margin-top: 50px;
+}
+
+.anchor-bottom {
+  height: 150px;
+}
+
+
+//Header
+
+.navbar-main {
+  background-color: $secondary-color;
+}
+
+.navbar-default .navbar-brand {
+  color: $primary-color;
+  font-size: 200%;
   font-weight: 900;
 }
+
+
+//Sticky Footer
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: $primary-color;
+    background-color: $secondary-color;
+}
+  .footer a,
+  .footer h3 {
+    color: $primary-color;
+  }
+
+.searchform {
+  margin-top: 20px;
+}
+
+.footer-nav-btn {
+  text-align: center;
+}
+
+.footer-accordion ul {
+    list-style-type: none;
+    padding-left: 0;
+    color: $primary-color;
+  }  
+
+
+.footer-baseline {
+  margin: 10px auto;  
+}
+
+.copyright-text {
+  text-align: center;
+  font-size: 80%;
+  color: $primary-color;
+}
+
+
