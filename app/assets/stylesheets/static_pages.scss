@@ -5,10 +5,12 @@
 $font-stack: 'Muli', sans-serif; 
 
 //Colors
-$primary-color: rgba(245, 245, 245, 1);
+$primary-color: rgba(255, 255, 255, 1);
 $secondary-color: rgba(175, 171, 165, 1);
-$highlight-color: rgba(239, 127, 127, 1);
-$emphasis-color: rgba(102, 163, 153, 1);
+$shade-color: rgba(114, 158, 161, 1);
+$highlight-color: rgba(246, 254, 219, 1);
+$emphasis-color: rgba(172, 215, 236, 1);
+
 
 // Styles
 body {
@@ -37,9 +39,7 @@ a:visited {
   color: $emphasis-color;
 }
 
-.navbar-default .navbar-nav>li>a {
-    color: $primary-color;
-  }
+
 
 //Content distance for fixed nav and footer
 .anchor-top {
@@ -52,7 +52,6 @@ a:visited {
 
 
 //Header
-
 .navbar-main {
   background-color: $secondary-color;
 }
@@ -60,9 +59,23 @@ a:visited {
 .navbar-default .navbar-brand {
   color: $primary-color;
   font-size: 200%;
-  font-weight: 900;
+  font-weight: 400;
 }
 
+.navbar-default .navbar-nav>li>a {
+  transition: all .4s linear .4s;
+  color: $primary-color;
+  font-size: 90%;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+}
+  .navbar-default .navbar-nav>li>a:hover,
+  .navbar-default .navbar-nav>li>a:active,
+  .navbar-default .navbar-nav>li>a:focus {
+  color: $secondary-color;
+  box-shadow: 0 -50px $primary-color inset;
+  }
 
 //Sticky Footer
 .footer {
@@ -86,10 +99,10 @@ a:visited {
 }
 
 .footer-accordion ul {
-    list-style-type: none;
-    padding-left: 0;
-    color: $primary-color;
-  }  
+  list-style-type: none;
+  padding-left: 0;
+  color: $primary-color;
+}  
 
 
 .footer-baseline {
