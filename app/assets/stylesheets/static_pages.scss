@@ -8,6 +8,7 @@ $font-stack: 'Muli', sans-serif;
 $primary-color: rgba(255, 255, 255, 1);
 $secondary-color: rgba(175, 171, 165, 1);
 $shade-color: rgba(114, 158, 161, 1);
+$text-color: rgba(87,85,82, 1);
 $highlight-color: rgba(246, 254, 219, 1);
 $emphasis-color: rgba(172, 215, 236, 1);
 
@@ -16,16 +17,30 @@ $emphasis-color: rgba(172, 215, 236, 1);
 body {
   font-family: $font-stack;
   font-weight: 300;
-  color: $secondary-color;
+  color: $text-color;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h6  {
   font-weight: 900;
   color: $secondary-color;
 }
 
 h4, h5 {
   text-transform: uppercase;
+}
+
+
+
+.subline {
+  font-weight: 400;
+  font-size: 1.8em;
+}
+
+.picks-subline {
+  font-family: $font-stack;
+  font-weight: 300;
+  font-size: 1em;
+  text-transform: lowercase;
 }
 
 a,
@@ -43,7 +58,7 @@ a:visited {
 
 //Content distance for fixed nav and footer
 .anchor-top {
-  margin-top: 50px;
+  margin-top: 70px;
 }
 
 .anchor-bottom {
@@ -54,6 +69,7 @@ a:visited {
 //Header
 .navbar-main {
   background-color: $secondary-color;
+  z-index: 100;
 }
 
 .navbar-default .navbar-brand {
@@ -61,11 +77,14 @@ a:visited {
   font-size: 200%;
   font-weight: 400;
 }
+.navbar-default .navbar-brand:hover {
+  color: $text-color;
+}
 
 .navbar-default .navbar-nav>li>a {
-  transition: all .4s linear .4s;
+  transition: all .3s linear .1s;
   color: $primary-color;
-  font-size: 90%;
+  font-size: 0.9em;
   font-weight: normal;
   text-transform: uppercase;
   letter-spacing: .2em;
@@ -75,6 +94,7 @@ a:visited {
   .navbar-default .navbar-nav>li>a:focus {
   color: $secondary-color;
   box-shadow: 0 -50px $primary-color inset;
+  outline-style: none;
   }
 
 //Sticky Footer
@@ -84,6 +104,7 @@ a:visited {
     width: 100%;
     color: $primary-color;
     background-color: $secondary-color;
+    z-index: 100;
 }
   .footer a,
   .footer h3 {
@@ -111,8 +132,70 @@ a:visited {
 
 .copyright-text {
   text-align: center;
-  font-size: 80%;
+  font-size: 0.8em;
   color: $primary-color;
 }
+
+
+//Page styling
+//Index
+
+
+.picks-s,
+.picks-m,
+.picks-l {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+
+  .picks-s header,
+  .picks-m header,
+  .picks-l header {
+    position: absolute;
+    max-width: 50%;
+  }
+
+.season-picks-inner {
+  margin: auto;
+}
+
+  .season-picks-inner h1,
+  .season-picks-inner h2,
+  .season-picks-inner h5,
+  .season-picks-inner h6 {    
+    padding: 5px;
+    background-color: rgba(255,255,255, .9);
+    margin-left: -15px;
+    color: $shade-color;
+  }
+
+  .season-picks-inner h5 {
+    font-weight: 900;
+  }  
+
+  .season-picks-inner a:hover img {
+    opacity: .5;
+  }
+
+  .season-picks-inner a:hover header {
+    z-index: 2;
+  }
+
+  .season-picks-inner a:hover h1,
+  .season-picks-inner a:hover h2,
+  .season-picks-inner a:hover h5,
+  .season-picks-inner a:hover h6 {
+    background-color: $shade-color;
+    color: $primary-color;
+  }
+
+
+
+
+
+
+
+
 
 
