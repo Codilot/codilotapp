@@ -99,12 +99,12 @@ a:visited {
 
 //Sticky Footer
 .footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    color: $primary-color;
-    background-color: $secondary-color;
-    z-index: 100;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: $primary-color;
+  background-color: $secondary-color;
+  z-index: 100;
 }
   .footer a,
   .footer h3 {
@@ -139,7 +139,6 @@ a:visited {
 
 //Page styling
 //Index
-
 
 .picks-s,
 .picks-m,
@@ -187,13 +186,37 @@ a:visited {
     color: $primary-color;
   }
 
+  .season-picks-inner img {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin: auto;
+  }
 
-.season-picks-inner img {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  margin: auto;
+@media (min-width: 1024px) { 
+  .crop {
+    height: 148px;
+    overflow: hidden;
+  }
+
+  .crop-img {
+    width: 100%;
+    height: 100%;
+    margin: 0 0 -20px 0;
+  }
 }
 
+@media (min-width: 768px) and (max-width: 1023px) { 
+  .crop {
+    height: 112px;
+    overflow: hidden;
+  }
+
+  .crop-img {
+    width: 100%;
+    height: 100%;
+    margin: 0 0 -8px 0;
+  }
+}
 
 
 

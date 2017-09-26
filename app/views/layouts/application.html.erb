@@ -25,7 +25,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">möbi</a>
+          <%= link_to 'möbi', static_pages_index_path, class: "navbar-brand" %>
         </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -45,6 +45,8 @@
                 <li><a href="#">electricity</a></li>
               </ul>
             </li>
+            <li><%= link_to 'About', static_pages_about_path %></li>
+            <li><%= link_to 'Contact', static_pages_contact_path %></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
@@ -86,8 +88,8 @@
               <div class="col-sm-3">
                 <h5>About</h5>
                 <ul>
-                  <li><a href="#">Our Story</a></li>
-                  <li><a href="#">Visit us</a></li>
+                  <li><%= link_to 'Our Story', static_pages_about_path %></li>
+                  <li><%= link_to 'Visit us', static_pages_contact_path %></li>
                   <li><a href="#">Terms &amp; conditions</a></li>
                 </ul>
               </div>
