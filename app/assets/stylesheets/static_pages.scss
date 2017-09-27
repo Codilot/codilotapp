@@ -45,12 +45,12 @@ h4, h5 {
 
 a,
 a:active,
-a:focus {
-  color: $highlight-color;
+a:focus,
+a:visited {
+  color: $shade-color;
 }
 
-a:hover,
-a:visited {
+a:hover {
   color: $emphasis-color;
 }
 
