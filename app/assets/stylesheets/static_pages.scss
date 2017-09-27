@@ -192,44 +192,7 @@ a:hover {
     margin: auto;
   }
 
-@media (min-width: 1024px) and (max-width: 1200px)  { 
-  .crop {
-    height: 148px;
-    overflow: hidden;
-  }
 
-  .crop-img {
-    width: 100%;
-    height: 100%;
-    margin: 0 0 -20px 0;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) { 
-  .crop {
-    height: 112px;
-    overflow: hidden;
-  }
-
-  .crop-img {
-    width: 100%;
-    height: 100%;
-    margin: 0 0 -8px 0;
-  }
-}
-
-@media (min-width: 1201px) { 
-  .crop {
-    height: 179px;
-    overflow: hidden;
-  }
-
-  .crop-img {
-    width: 100%;
-    height: 100%;
-    margin: 0 0 -1px 0;
-  }
-}
 
 
 
