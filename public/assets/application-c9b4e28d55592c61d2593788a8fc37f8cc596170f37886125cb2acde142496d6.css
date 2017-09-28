@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css?family=Muli:300,400,900");
+/* line 15, /home/eve/nameofapp/app/assets/stylesheets/products.scss */
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* line 20, /home/eve/nameofapp/app/assets/stylesheets/products.scss */
+.prod-m:hover header {
+  z-index: 2;
+}
+
+/* line 24, /home/eve/nameofapp/app/assets/stylesheets/products.scss */
+.prod-m:hover h1,
+.prod-m:hover h2,
+.prod-m:hover h5,
+.prod-m:hover h6 {
+  background-color: #729ea1;
+  color: white;
+}
+
+/* line 34, /home/eve/nameofapp/app/assets/stylesheets/products.scss */
+.field {
+  margin: 20px auto;
+}
+@import url("https://fonts.googleapis.com/css?family=Muli:300,400,900");
+/* line 17, /home/eve/nameofapp/app/assets/stylesheets/static_pages.scss */
+body {
+  font-family: "Muli", sans-serif;
+  font-weight: 300;
+  color: #575552;
+}
+
+/* line 23, /home/eve/nameofapp/app/assets/stylesheets/static_pages.scss */
+h1, h2, h3, h6 {
+  font-weight: 900;
+  color: #afaba5;
+}
+
+/* line 28, /home/eve/nameofapp/app/assets/stylesheets/static_pages.scss */
+h4, h5 {
+  text-transform: uppercase;
+}
+
+/* line 34, /home/eve/nameofapp/app/assets/stylesheets/static_pages.scss */
+.subline {
+  font-weight: 400;
+  font-size: 1.8em;
+}
+
+/* line 39, /home/eve/nameofapp/app/assets/stylesheets/static_pages.scss */
+.prod-subline {
+  font-family: "Muli", sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+  text-transform: lowercase;
+}
+
+/* line 46, /home/eve/nameofapp/app/assets/stylesheets/static_pages.scss */
+a,
+a:active,
+a:focus,
+a:visited {
+  color: #729ea1;
+}
+
+/* line 53, /home/eve/nameofapp/app/assets/stylesheets/static_pages.scss */
+a:hover {
+  color: #acd7ec;
+}
+
+/* line 60, /home/eve/nameofapp/app/assets/stylesheets/static_pages.scss */
+.anchor-top {
+  margin-top: 70px;
+}
+
+/* line 64, /home/eve/nameofapp/app/assets/stylesheets/static_pages.scss */
+.anchor-bottom {
+  height: 150px;
+}
+
+/* line 70, /home/eve/nameofapp/app/assets/stylesheets/static_pages.scss */
+.navbar-main {
+  background-color: #afaba5;
+  z-index: 100;
+}
+
+/* line 75, /home/eve/nameofapp/app/assets/stylesheets/static_pages.scss */
+.navbar-default .navbar-brand {
+  color: white;
+  font-size: 200%;
+  font-weight: 400;
+}
+
+/* line 80, /home/eve/nameofapp/app/assets/stylesheets/static_pages.scss */
+.navbar-default .navbar-brand:hover {
+  color: #575552;
+}
+
+/* line 84, /home/eve/nameofapp/app/assets/stylesheets/static_pages.scss */
+.navbar-default .navbar-nav > li > a {
+  transition: all .3s linear .1s;
+  color: white;
+  font-size: 0.9em;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+}
+
+/* line 92, /home/eve/nameofapp/app/assets/stylesheets/static_pages.scss */
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:active,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #afaba5;
+  box-shadow: 0 -50px white inset;
+  outline-style: none;
+}
+
+/* line 101, /home/eve/nameofapp/app/assets/stylesheets/static_pages.scss */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  background-color: #afaba5;
+  z-index: 100;
+}
+
+/* line 109, /home/eve/nameofapp/app/assets/stylesheets/static_pages.scss */
+.footer a,
+.footer h3 {
+  color: white;
+}
+
+/* line 114, /home/eve/nameofapp/app/assets/stylesheets/static_pages.scss */
+.searchform {
+  margin-top: 20px;
+}
+
+/* line 118, /home/eve/nameofapp/app/assets/stylesheets/static_pages.scss */
+.footer-nav-btn {
+  text-align: center;
+}
+
+/* line 122, /home/eve/nameofapp/app/assets/stylesheets/static_pages.scss */
+.footer-accordion ul {
+  list-style-type: none;
+  padding-left: 0;
+  color: white;
+}
+
+/* line 129, /home/eve/nameofapp/app/assets/stylesheets/static_pages.scss */
+.footer-baseline {
+  margin: 10px auto;
+}
+
+/* line 133, /home/eve/nameofapp/app/assets/stylesheets/static_pages.scss */
+.copyright-text {
+  text-align: center;
+  font-size: 0.8em;
+  color: white;
+}
+
+/* line 143, /home/eve/nameofapp/app/assets/stylesheets/static_pages.scss */
+.prod-s,
+.prod-m,
+.prod-l {
+  position: relative;
+}
+
+/* line 150, /home/eve/nameofapp/app/assets/stylesheets/static_pages.scss */
+.prod-s header,
+.prod-m header,
+.prod-l header {
+  position: absolute;
+  top: 20px;
+  max-width: 60%;
+}
+
+/* line 158, /home/eve/nameofapp/app/assets/stylesheets/static_pages.scss */
+.prod-inner h1,
+.prod-inner h2,
+.prod-inner h5,
+.prod-inner h6 {
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.9);
+  margin-left: -15px;
+  color: #729ea1;
+}
+
+/* line 168, /home/eve/nameofapp/app/assets/stylesheets/static_pages.scss */
+.prod-inner h5 {
+  font-weight: 900;
+}
+
+/* line 172, /home/eve/nameofapp/app/assets/stylesheets/static_pages.scss */
+.prod-inner a:hover img {
+  opacity: .5;
+}
+
+/* line 176, /home/eve/nameofapp/app/assets/stylesheets/static_pages.scss */
+.prod-inner a:hover header {
+  z-index: 2;
+}
+
+/* line 180, /home/eve/nameofapp/app/assets/stylesheets/static_pages.scss */
+.prod-inner a:hover h1,
+.prod-inner a:hover h2,
+.prod-inner a:hover h5,
+.prod-inner a:hover h6 {
+  background-color: #729ea1;
+  color: white;
+}
+
+/* line 188, /home/eve/nameofapp/app/assets/stylesheets/static_pages.scss */
+.prod-inner img {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin: auto;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
