@@ -36,7 +36,7 @@ h4, h5 {
   font-size: 1.8em;
 }
 
-.picks-subline {
+.prod-subline {
   font-family: $font-stack;
   font-weight: 300;
   font-size: 1em;
@@ -140,53 +140,52 @@ a:hover {
 //Page styling
 //Index
 
-.picks-s,
-.picks-m,
-.picks-l {
+.prod-s,
+.prod-m,
+.prod-l {
   position: relative;
 }
 
 
-  .picks-s header,
-  .picks-m header,
-  .picks-l header {
+  .prod-s header,
+  .prod-m header,
+  .prod-l header {
     position: absolute;
     top: 20px;
-    max-width: 50%;
+    max-width: 60%;
   }
 
-
-  .season-picks-inner h1,
-  .season-picks-inner h2,
-  .season-picks-inner h5,
-  .season-picks-inner h6 {    
+  .prod-inner h1,
+  .prod-inner h2,
+  .prod-inner h5,
+  .prod-inner h6 {    
     padding: 5px;
     background-color: rgba(255,255,255, .9);
     margin-left:-15px;
     color: $shade-color;
   }
 
-  .season-picks-inner h5 {
+  .prod-inner h5 {
     font-weight: 900;
   }  
 
-  .season-picks-inner a:hover img {
+  .prod-inner a:hover img {
     opacity: .5;
   }
 
-  .season-picks-inner a:hover header {
+  .prod-inner a:hover header {
     z-index: 2;
   }
 
-  .season-picks-inner a:hover h1,
-  .season-picks-inner a:hover h2,
-  .season-picks-inner a:hover h5,
-  .season-picks-inner a:hover h6 {
+  .prod-inner a:hover h1,
+  .prod-inner a:hover h2,
+  .prod-inner a:hover h5,
+  .prod-inner a:hover h6 {
     background-color: $shade-color;
     color: $primary-color;
   }
 
-  .season-picks-inner img {
+  .prod-inner img {
     padding-top: 15px;
     padding-bottom: 15px;
     margin: auto;

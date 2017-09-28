@@ -5,14 +5,14 @@
   <h1>Products</h1>
 
 
-  <div class="row">
+  <div class="row prod-inner">
   
     <% @products.each do |product| %>
-      <div class= "col-sm-3">
-        <%= image_tag(product.image_url) %>
-        <h4><%= product.name %></h4>
-        <p><%= product.description %></p>
-        <p><%= product.image_url %><p>
+      <div class= "col-sm-3 prod-m">
+        <%= link_to (image_tag(product.image_url)), product %>
+        <header>
+          <h5><%= product.name %></h5>
+        </header>
         <%= link_to 'Show', product %>
         <%= link_to 'Edit', edit_product_path(product) %>
         <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>

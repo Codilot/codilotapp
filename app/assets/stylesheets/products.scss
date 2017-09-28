@@ -16,3 +16,15 @@ img {
 	width: 100%;
     height: auto;
 }
+
+ .prod-m:hover header {
+    z-index: 2;
+ }
+
+  .prod-m:hover h1,
+  .prod-m:hover h2,
+  .prod-m:hover h5,
+  .prod-m:hover h6 {
+    background-color: $shade-color;
+    color: $primary-color;
+  }
