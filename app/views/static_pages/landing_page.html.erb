@@ -21,7 +21,7 @@
                 <span class="prod-subline"><%= @featured_product[0].teaser %><span class="glyphicon glyphicon-euro prod-subline"><span class="prod-subline"><%= @featured_product[0].price %></span>
               </h6>
             </header> 
-            <%= link_to (image_tag(@featured_product[0].image_url)), products_path(@product) %>     
+            <%= link_to (image_tag(@featured_product[0].image_url)), product_path(@featured_product[0]) %>     
           </a> 
         </div>
         <div class="col-xs-12 prod-s">
@@ -33,7 +33,7 @@
                 <span class="prod-subline"><%= @featured_product[1].price %></span>
               </h6>
             </header>   
-            <%= link_to (image_tag(@featured_product[1].image_url)), products_path(@product) %> 
+            <%= link_to (image_tag(@featured_product[1].image_url)), product_path(@featured_product[1]) %> 
           </a>
         </div>
         <div class="col-xs-12 prod-s">
@@ -45,7 +45,7 @@
                 <span class="prod-subline"><%= @featured_product[2].price %></span>
               </h6>
             </header>  
-            <%= link_to (image_tag(@featured_product[2].image_url)), products_path(@product) %>
+            <%= link_to (image_tag(@featured_product[2].image_url)), product_path(@featured_product[2]) %>
           </a>
         </div><!-- /.col  -->
       </div><!-- /.row  -->
@@ -62,7 +62,7 @@
                 <span class="prod-subline"><%= @featured_product[3].price %></span>
               </h6>
             </header>  
-            <%= link_to (image_tag(@featured_product[3].image_url)), products_path(@product) %>
+            <%= link_to (image_tag(@featured_product[3].image_url)), product_path(@featured_product[3]) %>
           </a> 
         </div>
         <div class="col-xs-6 prod-s">
@@ -74,7 +74,7 @@
                 <span class="prod-subline"><%= @featured_product[4].price %></span>
               </h6>
             </header>  
-            <%= link_to (image_tag(@featured_product[4].image_url)), products_path(@product) %>
+            <%= link_to (image_tag(@featured_product[4].image_url)), product_path(@featured_product[4]) %>
           </a>      
         </div>
         <div class="col-xs-12 prod-m">
@@ -86,7 +86,7 @@
                 <span class="prod-subline"><%= @featured_product[5].price %></span>
               </h5>
             </header>  
-            <%= link_to (image_tag(@featured_product[5].image_url)), products_path(@product) %>
+            <%= link_to (image_tag(@featured_product[5].image_url)), product_path(@featured_product[5]) %>
           </a>      
         </div>
       </div>
