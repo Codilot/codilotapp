@@ -18,7 +18,7 @@
             <header> 
               <h6>
                 <%= @featured_product[0].name %> 
-                <span class="prod-subline">on sale from <span class="glyphicon glyphicon-euro prod-subline"><span class="prod-subline"><%= @featured_product[0].price %></span>
+                <span class="prod-subline"><%= @featured_product[0].teaser %><span class="glyphicon glyphicon-euro prod-subline"><span class="prod-subline"><%= @featured_product[0].price %></span>
               </h6>
             </header> 
             <%= link_to (image_tag(@featured_product[0].image_url)), products_path(@product) %>     
@@ -29,7 +29,7 @@
             <header> 
               <h6>
                 <%= @featured_product[1].name %> 
-                <span class="prod-subline">from milky way designers</span>
+                <span class="prod-subline"><%= @featured_product[1].teaser %></span>
                 <span class="prod-subline"><%= @featured_product[1].price %></span>
               </h6>
             </header>   
@@ -41,7 +41,7 @@
             <header> 
               <h6>
                 <%= @featured_product[2].name %> 
-                <span class="prod-subline">sit on it</span>
+                <span class="prod-subline"><%= @featured_product[2].teaser %></span>
                 <span class="prod-subline"><%= @featured_product[2].price %></span>
               </h6>
             </header>  
@@ -58,7 +58,7 @@
             <header> 
               <h6>
                 <%= @featured_product[3].name %> 
-                <span class="prod-subline">on sale</span>
+                <span class="prod-subline"><%= @featured_product[3].teaser %></span>
                 <span class="prod-subline"><%= @featured_product[3].price %></span>
               </h6>
             </header>  
@@ -70,7 +70,7 @@
             <header> 
               <h6>
                 <%= @featured_product[4].name %> 
-                <span class="prod-subline">looksgood</span>
+                <span class="prod-subline"><%= @featured_product[4].teaser %></span>
                 <span class="prod-subline"><%= @featured_product[4].price %></span>
               </h6>
             </header>  
@@ -82,7 +82,7 @@
             <header> 
               <h5>
                 <%= @featured_product[5].name %> 
-                <span class="prod-subline">modern black</span>
+                <span class="prod-subline"><%= @featured_product[5].teaser %></span>
                 <span class="prod-subline"><%= @featured_product[5].price %></span>
               </h5>
             </header>  
