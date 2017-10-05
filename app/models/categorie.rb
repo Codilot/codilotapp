@@ -1,4 +1,3 @@
 class Categorie < ApplicationRecord
-  belongs_to :product
-  belongs_to :article 
+  has_many :orders
 end
