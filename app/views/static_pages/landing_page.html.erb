@@ -1,7 +1,7 @@
 <section class="season-prod">
   <div class="container">
   <div class="row prod-inner">
-    <div class="col-sm-6 product">
+    <div class="col-sm-6 prod">
       <a href="#">
         <header> 
           <h1>Must haves</h1>
@@ -13,7 +13,7 @@
 
     <div class="col-sm-2">
       <div class="row">
-        <div class="col-xs-12 product">
+        <div class="col-xs-12 prod">
             <header> 
               <h6>
                 <%= @featured_product[0].name %> 
@@ -22,7 +22,7 @@
             </header> 
             <%= link_to (image_tag(@featured_product[0].image_url)), product_path(@featured_product[0]) %>     
         </div>
-        <div class="col-xs-12 product">
+        <div class="col-xs-12 prod">
             <header> 
               <h6>
                 <%= @featured_product[1].name %> 
@@ -32,7 +32,7 @@
             </header>   
             <%= link_to (image_tag(@featured_product[1].image_url)), product_path(@featured_product[1]) %> 
         </div>
-        <div class="col-xs-12 product">
+        <div class="col-xs-12 prod">
             <header> 
               <h6>
                 <%= @featured_product[2].name %> 
@@ -47,7 +47,7 @@
 
     <div class="col-sm-4">
       <div class="row">
-        <div class="col-xs-6 product">
+        <div class="col-xs-6 prod">
             <header> 
               <h6>
                 <%= @featured_product[3].name %> 
@@ -57,7 +57,7 @@
             </header>  
             <%= link_to (image_tag(@featured_product[3].image_url)), product_path(@featured_product[3]) %>
         </div>
-        <div class="col-xs-6 product">
+        <div class="col-xs-6 prod">
             <header> 
               <h6>
                 <%= @featured_product[4].name %> 
@@ -67,7 +67,7 @@
             </header>  
             <%= link_to (image_tag(@featured_product[4].image_url)), product_path(@featured_product[4]) %>     
         </div>
-        <div class="col-xs-12 product">
+        <div class="col-xs-12 prod">
             <header> 
               <h5>
                 <%= @featured_product[5].name %> 

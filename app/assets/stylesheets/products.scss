@@ -1,67 +1,8 @@
-// Google Fonts
-@import url('https://fonts.googleapis.com/css?family=Muli:300,400,900');
-
-// Font Variables
-$font-stack: 'Muli', sans-serif; 
-
-//Colors
-$primary-color: rgba(255, 255, 255, 1);
-$secondary-color: rgba(175, 171, 165, 1);
-$shade-color: rgba(114, 158, 161, 1);
-$text-color: rgba(87,85,82, 1);
-$highlight-color: rgba(246, 254, 219, 1);
-$emphasis-color: rgba(172, 215, 236, 1);
 
 img {
   width: 100%;
   height: auto;
 }
-
-.product {
-  position: relative;
-}
-
-  .product header {
-      position: absolute;
-      top: 20px;
-      max-width: 60%;
-    }
-
-  .product h1,
-  .product h2,
-  .product h5,
-  .product h6 {    
-    padding: 5px;
-    background-color: rgba(255,255,255, .9);
-    margin-left:-15px;
-    color: $shade-color;
-  }
-
-  .product h5 {
-    font-weight: 900;
-  }  
-
-  .product a:hover img {
-    opacity: .5;
-  }
-  
-  .product:hover header {
-    z-index: 2;
-  }
-
-  .product:hover h1,
-  .product:hover h2,
-  .product:hover h5,
-  .product:hover h6 {
-    background-color: $shade-color;
-    color: $primary-color;
-  }
-
-  .product img {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin: auto;
-  }
 
 
 //Form
