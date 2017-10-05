@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  resources :articles
   resources :products
   resources :orders, only: [:index, :show, :create, :destroy]
+  resources :seasonal_products, only: [:index, :show, :create, :edit, :destroy]
   
   get 'static_pages/about'
 
