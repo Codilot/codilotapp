@@ -140,52 +140,46 @@ a:hover {
 //Page styling
 //Index
 
-.prod-s,
-.prod-m,
-.prod-l {
+.product {
   position: relative;
 }
+  .product header {
+      position: absolute;
+      top: 20px;
+      max-width: 60%;
+    }
 
-
-  .prod-s header,
-  .prod-m header,
-  .prod-l header {
-    position: absolute;
-    top: 20px;
-    max-width: 60%;
-  }
-
-  .prod-inner h1,
-  .prod-inner h2,
-  .prod-inner h5,
-  .prod-inner h6 {    
+  .product h1,
+  .product h2,
+  .product h5,
+  .product h6 {    
     padding: 5px;
     background-color: rgba(255,255,255, .9);
     margin-left:-15px;
     color: $shade-color;
   }
 
-  .prod-inner h5 {
+  .product h5 {
     font-weight: 900;
   }  
 
-  .prod-inner a:hover img {
+  .product a:hover img {
     opacity: .5;
   }
-
-  .prod-inner a:hover header {
+  
+  .product:hover header {
     z-index: 2;
   }
 
-  .prod-inner a:hover h1,
-  .prod-inner a:hover h2,
-  .prod-inner a:hover h5,
-  .prod-inner a:hover h6 {
+  .product:hover h1,
+  .product:hover h2,
+  .product:hover h5,
+  .product:hover h6 {
     background-color: $shade-color;
     color: $primary-color;
   }
 
-  .prod-inner img {
+  .product img {
     padding-top: 15px;
     padding-bottom: 15px;
     margin: auto;

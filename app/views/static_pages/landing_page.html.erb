@@ -1,7 +1,7 @@
 <section class="season-prod">
   <div class="container">
   <div class="row prod-inner">
-    <div class="col-sm-6 prod-l">
+    <div class="col-sm-6 product">
       <a href="#">
         <header> 
           <h1>Must haves</h1>
@@ -13,8 +13,7 @@
 
     <div class="col-sm-2">
       <div class="row">
-        <div class="col-xs-12 prod-s">
-          <a href="#">
+        <div class="col-xs-12 product">
             <header> 
               <h6>
                 <%= @featured_product[0].name %> 
@@ -22,10 +21,8 @@
               </h6>
             </header> 
             <%= link_to (image_tag(@featured_product[0].image_url)), product_path(@featured_product[0]) %>     
-          </a> 
         </div>
-        <div class="col-xs-12 prod-s">
-          <a href="#">
+        <div class="col-xs-12 product">
             <header> 
               <h6>
                 <%= @featured_product[1].name %> 
@@ -34,10 +31,8 @@
               </h6>
             </header>   
             <%= link_to (image_tag(@featured_product[1].image_url)), product_path(@featured_product[1]) %> 
-          </a>
         </div>
-        <div class="col-xs-12 prod-s">
-          <a href="#">
+        <div class="col-xs-12 product">
             <header> 
               <h6>
                 <%= @featured_product[2].name %> 
@@ -46,15 +41,13 @@
               </h6>
             </header>  
             <%= link_to (image_tag(@featured_product[2].image_url)), product_path(@featured_product[2]) %>
-          </a>
         </div><!-- /.col  -->
       </div><!-- /.row  -->
     </div><!-- /.middlecol-level 1 -->
 
     <div class="col-sm-4">
       <div class="row">
-        <div class="col-xs-6 prod-s">
-          <a href="#">
+        <div class="col-xs-6 product">
             <header> 
               <h6>
                 <%= @featured_product[3].name %> 
@@ -63,10 +56,8 @@
               </h6>
             </header>  
             <%= link_to (image_tag(@featured_product[3].image_url)), product_path(@featured_product[3]) %>
-          </a> 
         </div>
-        <div class="col-xs-6 prod-s">
-          <a href="#">
+        <div class="col-xs-6 product">
             <header> 
               <h6>
                 <%= @featured_product[4].name %> 
@@ -74,11 +65,9 @@
                 <span class="prod-subline"><%= @featured_product[4].price %></span>
               </h6>
             </header>  
-            <%= link_to (image_tag(@featured_product[4].image_url)), product_path(@featured_product[4]) %>
-          </a>      
+            <%= link_to (image_tag(@featured_product[4].image_url)), product_path(@featured_product[4]) %>     
         </div>
-        <div class="col-xs-12 prod-m">
-          <a href="#">
+        <div class="col-xs-12 product">
             <header> 
               <h5>
                 <%= @featured_product[5].name %> 
@@ -86,8 +75,7 @@
                 <span class="prod-subline"><%= @featured_product[5].price %></span>
               </h5>
             </header>  
-            <%= link_to (image_tag(@featured_product[5].image_url)), product_path(@featured_product[5]) %>
-          </a>      
+            <%= link_to (image_tag(@featured_product[5].image_url)), product_path(@featured_product[5]) %>     
         </div>
       </div>
     </div><!-- /.rightcol-level 1 -->

@@ -1,33 +1,8 @@
-// Google Fonts
-@import url('https://fonts.googleapis.com/css?family=Muli:300,400,900');
-
-// Font Variables
-$font-stack: 'Muli', sans-serif; 
-
-//Colors
-$primary-color: rgba(255, 255, 255, 1);
-$secondary-color: rgba(175, 171, 165, 1);
-$shade-color: rgba(114, 158, 161, 1);
-$text-color: rgba(87,85,82, 1);
-$highlight-color: rgba(246, 254, 219, 1);
-$emphasis-color: rgba(172, 215, 236, 1);
 
 img {
-	width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
-
- .prod-m:hover header {
-    z-index: 2;
- }
-
-  .prod-m:hover h1,
-  .prod-m:hover h2,
-  .prod-m:hover h5,
-  .prod-m:hover h6 {
-    background-color: $shade-color;
-    color: $primary-color;
-  }
 
 
 //Form
