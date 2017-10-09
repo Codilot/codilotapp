@@ -7,4 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Categorie(name: 'living') = Categorie(name: 'Living')
+living = Categorie.create(name: 'Living')
+lighting = Categorie.create(name: 'Lighting')
+dining = Categorie.create(name: 'Dining')
+seasonal = Categorie.create(name: 'Seasonal')
