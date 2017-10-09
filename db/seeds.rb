@@ -7,3 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+Categorie(name: 'living') = Categorie(name: 'Living')

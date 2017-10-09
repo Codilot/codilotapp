@@ -36,6 +36,13 @@
     <%= form.text_field :price %>
   </div>
 
+  <div class="field">
+    <%= form.label :categorie_id %><br>
+    <%= form.collection_select :categorie_id, Categorie.all, :id, :name, :prompt => "Select a Category" %>
+    or create one:
+    <%= form.text_field :new_categorie_name %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
