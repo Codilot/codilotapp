@@ -1,91 +1,80 @@
 <section class="season-prod">
   <div class="container">
-  <div class="row prod-inner">
-    <div class="col-sm-6 prod">
-      <a href="#">
-        <header> 
-          <h1>Must haves</h1>
-          <h2 class="subline">Best picks of the season</h2>
-        </header>
-        <%= image_tag("prod-xl/prod1.jpg", class: "img-responsive ") %>
-      </a>
-    </div><!-- /.leftcol level 1-->
+    <div class="row prod-inner">
+      <div class="col-sm-6 prod">
+        <a href="#">
+          <header> 
+            <h1>Must haves</h1>
+            <h2 class="subline">Best picks of the season</h2>
+          </header>
+          <%= image_tag("prod-xl/prod1.jpg", class: "img-responsive ") %>
+        </a>
+      </div><!-- /.leftcol level 1-->
 
-    <div class="col-sm-2">
-      <div class="row">
-        <div class="col-xs-12 prod">
-            <header> 
-              <h6>
-                <%= @featured_product[0].name %> 
-                <span class="prod-subline"><%= @featured_product[0].teaser %><span class="glyphicon glyphicon-euro prod-subline"><span class="prod-subline"><%= @featured_product[0].price %></span>
-              </h6>
-            </header> 
-            <%= link_to (image_tag(@featured_product[0].image_url)), product_path(@featured_product[0]) %>     
-        </div>
-        <div class="col-xs-12 prod">
-            <header> 
-              <h6>
-                <%= @featured_product[1].name %> 
-                <span class="prod-subline"><%= @featured_product[1].teaser %></span>
-                <span class="prod-subline"><%= @featured_product[1].price %></span>
-              </h6>
-            </header>   
-            <%= link_to (image_tag(@featured_product[1].image_url)), product_path(@featured_product[1]) %> 
-        </div>
-        <div class="col-xs-12 prod">
-            <header> 
-              <h6>
-                <%= @featured_product[2].name %> 
-                <span class="prod-subline"><%= @featured_product[2].teaser %></span>
-                <span class="prod-subline"><%= @featured_product[2].price %></span>
-              </h6>
-            </header>  
-            <%= link_to (image_tag(@featured_product[2].image_url)), product_path(@featured_product[2]) %>
-        </div><!-- /.col  -->
-      </div><!-- /.row  -->
-    </div><!-- /.middlecol-level 1 -->
+      <div class="col-sm-2">
+        <div class="row">
+          <div class="col-xs-12 prod">
+            <%= render partial: "featured_product", locals: {featured_product: @featured_product[0]} %>     
+          </div>
+          <div class="col-xs-12 prod">
+            <%= render partial: "featured_product", locals: {featured_product: @featured_product[1]} %>  
+          </div>
+          <div class="col-xs-12 prod">
+            <%= render partial: "featured_product", locals: {featured_product: @featured_product[2]} %> 
+          </div><!-- /.col  -->
+        </div><!-- /.row  -->
+      </div><!-- /.middlecol-level 1 -->
 
-    <div class="col-sm-4">
-      <div class="row">
-        <div class="col-xs-6 prod">
-            <header> 
-              <h6>
-                <%= @featured_product[3].name %> 
-                <span class="prod-subline"><%= @featured_product[3].teaser %></span>
-                <span class="prod-subline"><%= @featured_product[3].price %></span>
-              </h6>
-            </header>  
-            <%= link_to (image_tag(@featured_product[3].image_url)), product_path(@featured_product[3]) %>
+      <div class="col-sm-4">
+        <div class="row">
+          <div class="col-xs-6 prod">
+            <%= render partial: "featured_product", locals: {featured_product: @featured_product[3]} %> 
+          </div>
+          <div class="col-xs-6 prod">
+            <%= render partial: "featured_product", locals: {featured_product: @featured_product[4]} %>     
+          </div>
+          <div class="col-xs-12 prod">
+            <%= render partial: "featured_product", locals: {featured_product: @featured_product[5]} %>   
+          </div>
         </div>
-        <div class="col-xs-6 prod">
-            <header> 
-              <h6>
-                <%= @featured_product[4].name %> 
-                <span class="prod-subline"><%= @featured_product[4].teaser %></span>
-                <span class="prod-subline"><%= @featured_product[4].price %></span>
-              </h6>
-            </header>  
-            <%= link_to (image_tag(@featured_product[4].image_url)), product_path(@featured_product[4]) %>     
-        </div>
-        <div class="col-xs-12 prod">
-            <header> 
-              <h5>
-                <%= @featured_product[5].name %> 
-                <span class="prod-subline"><%= @featured_product[5].teaser %></span>
-                <span class="prod-subline"><%= @featured_product[5].price %></span>
-              </h5>
-            </header>  
-            <%= link_to (image_tag(@featured_product[5].image_url)), product_path(@featured_product[5]) %>     
-        </div>
-      </div>
-    </div><!-- /.rightcol-level 1 -->
-  </div><!-- /.row -->
+      </div><!-- /.rightcol-level 1 -->
+    </div><!-- /.row -->
+    <hr>
   </div><!-- /.container-fluid -->
 </section>
 
 <section>
-  <hr>
+  <div class="container">
+    <div id="carousel-landing-page" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <% @product_slide_groups.each do |indicator| %>
+          <%= render partial: "product_slider_indicators", locals: {indicator: indicator} %>
+        <% end %>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner row" role="listbox">
+        <% @product_slide_groups.each do |group| %>
+          <%= render partial: "product_slider", locals: {group: group} %>
+        <% end %>
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-landing-page" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-landing-page" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <hr>
+  </div>  <!-- End Container -->
 </section>
+
+
 
 
 
