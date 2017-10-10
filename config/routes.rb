@@ -10,6 +10,10 @@ Rails.application.routes.draw do
 
   get 'static_pages/index'
 
+  get 'static_pages/living'
+  get 'static_pages/lighting'
+  get 'static_pages/dining'
+
   get 'static_pages/landing_page'
   root 'static_pages#landing_page'
 
