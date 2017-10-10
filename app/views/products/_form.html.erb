@@ -37,6 +37,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :colour %><br>
+    <%= form.text_field :colour %>
+  </div>
+
+  <div class="field">
     <%= form.label :categorie_id %><br>
     <%= form.collection_select :categorie_id, Categorie.all, :id, :name, :prompt => "Select a Category" %>
     or create one:
