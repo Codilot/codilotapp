@@ -41,12 +41,12 @@
     <%= form.text_field :colour %>
   </div>
 
-  <div class="field">
-    <%= form.label :categorie_id %><br>
-    <%= form.collection_select :categorie_id, Categorie.all, :id, :name, :prompt => "Select a Category" %>
+  <p>
+    <label for="product_categorie_id">Categorie:</label><br />
+    <%= form.collection_select :categorie_id, Categorie.all, :id, :name, :prompt => "Select a Categorie" %>
     or create one:
     <%= form.text_field :new_categorie_name %>
-  </div>
+  </p>
 
   <div class="actions">
     <%= form.submit %>
