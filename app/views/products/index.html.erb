@@ -8,7 +8,7 @@
   <div class="row prod-inner">
   
     <% @products.each do |product| %>
-      <%= render product %>
+      <%= render "partial: "product", locals: {product: product}" %>
     <% end %>
   
   </div>
