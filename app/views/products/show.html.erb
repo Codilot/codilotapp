@@ -32,10 +32,12 @@
         <%= @product.colour %>
       </p>
 
-      <p>
-        <strong>Categorie:</strong>
-        <%= @product.categorie.name %>
-      </p>
+      <% if @product.categorie != nil %>
+      <p> 
+        <strong>Categorie:</strong> 
+        <%= @product.categorie.name %> 
+      </p> 
+      <% end %>
 
     </div>
   </div>
