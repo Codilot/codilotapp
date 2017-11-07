@@ -38,6 +38,7 @@ gem 'jquery-rails'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick', '~> 4.3'
 gem 'fog'
+gem 'figaro'
 
 
 group :development, :test do

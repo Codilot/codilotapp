@@ -3,10 +3,11 @@ class ProductImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
+  
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
-  # storage :fog
+  #storage :file
+  storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -24,18 +25,15 @@ class ProductImageUploader < CarrierWave::Uploader::Base
 
   # Process files as they are uploaded:
   # process scale: [200, 300]
-    process resize_to_fit: [1080, 1080]
+    process resize_to_fit: [580, 580]
   #
   # def scale(width, height)
   #   # do something
   # end
 
   # Create different versions of your uploaded files:
-  version :full do
-    process resize_to_fit: [580, 580]
-  end
 
-  version :preview do
+  version :medium do
     process resize_to_fit: [390, 390]
   end
 

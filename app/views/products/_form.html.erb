@@ -11,54 +11,67 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %><br>
-    <%= form.text_field :name, id: :product_name %>
-  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <%= form.label :name %><br>
+        <%= form.text_field :name, id: :product_name, :size => 50 %>
+      </div>
 
-  <div class="field">
-    <%= form.label :teaser %><br>
-    <%= form.text_area :teaser, id: :product_teaser %>
-  </div>
+      <div class="form-group">
+        <%= form.label :teaser %><br>
+        <%= form.text_area :teaser, id: :product_teaser, :cols => "50", :rows => "5"  %>
+      </div>
 
-  <div class="field">
-    <%= form.label :description %><br>
-    <%= form.text_area :description, id: :product_description %>
-  </div>
+      <div class="form-group">
+        <%= form.label :description %><br>
+        <%= form.text_area :description, id: :product_description, :cols => "50", :rows => "15" %>
+      </div>
 
-  <div class="field">
-    <%= form.label :image_url %><br>
-    <%= form.text_field :image_url, id: :product_image_url %>
   </div>
+    <div class="col-sm-6">  
+      <div class="form-group">
+        <%= form.label :product_image %><br>
+        <%= form.file_field :product_image %>
+        <% if form.object.product_image? %>
+        <div class="row">
+          <div class="col-sm-4">
+            <br>
+            <%= image_tag(product.product_image.thumb.url) %>
+            <br>
+          </div>
+        </div>
+        <div class="form-check">
+          <br>
+          <%= form.check_box :remove_product_image %>
+          <%= form.label :remove_product_image, class: "form-check-label" %>
+        </div>      
+        <% end %>
+      </div>
+      <div class="form-group">
+        <%= form.label :price %><br>
+        <%= form.text_field :price %>
+      </div>
 
-  <div class="field">
-    <%= form.label :product_image %><br>
-    <%= form.file_field :product_image %>
-    <% if form.object.product_image? %>
-      <%= image_tag form.object.product_image.thumb.url %>
-      <%= form.label :remove_product_image %>
-      <%= form.check_box :remove_product_image %> 
-    <% end %>
-  </div>
+      <div class="form-group">
+        <%= form.label :colour %><br>
+        <%= form.text_field :colour %>
+      </div>
 
-  <div class="field">
-    <%= form.label :price %><br>
-    <%= form.text_field :price %>
-  </div>
+      <div class="form-group">
+        <%= form.label :categorie_id %><br>
+        <%= form.collection_select :categorie_id, Categorie.all, :id, :name, :prompt => "Select a Categorie" %>
+        or create one:
+        <%= form.text_field :new_categorie_name %>
+      </div>
 
-  <div class="field">
-    <%= form.label :colour %><br>
-    <%= form.text_field :colour %>
-  </div>
-  
-  <div class="field">
-    <%= form.label :categorie_id %><br>
-    <%= form.collection_select :categorie_id, Categorie.all, :id, :name, :prompt => "Select a Categorie" %>
-    or create one:
-    <%= form.text_field :new_categorie_name %>
-  </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    </div><!-- end of col -->
+    <div class="col-sm-12">
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    </div>
+
+  </div><!-- end of row -->
 <% end %>
