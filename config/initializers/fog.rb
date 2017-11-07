@@ -28,6 +28,5 @@ else
     :region 				=> 'eu-central-1'
   }
   config.fog_directory  = ENV['AWS_BUCKET_DEV']
-  config.fog_public     = false
   end
 end
