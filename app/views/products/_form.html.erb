@@ -32,6 +32,16 @@
   </div>
 
   <div class="field">
+    <%= form.label :product_image %><br>
+    <%= form.file_field :product_image %>
+    <% if form.object.product_image? %>
+      <%= image_tag form.object.product_image.thumb.url %>
+      <%= form.label :remove_product_image %>
+      <%= form.check_box :remove_product_image %> 
+    <% end %>
+  </div>
+
+  <div class="field">
     <%= form.label :price %><br>
     <%= form.text_field :price %>
   </div>

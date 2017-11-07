@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171010074300) do
+ActiveRecord::Schema.define(version: 20171106104709) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20171010074300) do
     t.string "teaser"
     t.integer "categorie_id"
     t.string "colour"
+    t.string "product_image"
     t.index ["categorie_id"], name: "index_products_on_categorie_id"
   end
 

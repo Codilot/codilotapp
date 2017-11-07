@@ -1,5 +1,10 @@
 class ProductsController < ApplicationController
+  #authentication
+  http_basic_authenticate_with name: "eve", password: "secret", except: [:index, :show]  
+
+  #public actions
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+
 
   # GET /products
   # GET /products.json
@@ -69,6 +74,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :teaser, :description, :image_url, :price, :categorie_id, :new_categorie_name, :colour)
+      params.require(:product).permit(:name, :teaser, :description, :image_url, :price, :categorie_id, :new_categorie_name, :colour, :product_image, :remove_product_image)
     end
 end

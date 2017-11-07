@@ -2,7 +2,7 @@
   <p id="notice"><%= notice %></p>
   <div class="row">
     <div class="col-sm-6">
-      <%= image_tag(@product.image_url) %>
+        <%= image_tag @product.product_image.url(:full) if @product.product_image? %>
     </div>
     <div class="col-sm-6">
       <h2><%= @product.name %></h2>
@@ -21,6 +21,7 @@
         <strong>Image url:</strong>
         <%= @product.image_url %>
       </p>
+
 
       <p>
         <strong>Price:</strong>
