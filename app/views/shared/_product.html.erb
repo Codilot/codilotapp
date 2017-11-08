@@ -1,6 +1,7 @@
 <div class= "col-sm-3 prod">
-
-  <%= link_to (image_tag product.product_image.url), product_path(product) %>
+  <% if product.product_image.present? %>
+  <%= link_to (image_tag (product.product_image.url)), product_path(product) %>
+  <% end %>
   <header>
     <h5><%= product.name %></h5>
   </header>
