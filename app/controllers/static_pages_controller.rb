@@ -1,6 +1,5 @@
 class StaticPagesController < ApplicationController
-  def index
-  end
+
   
   def landing_page
     @featured_product = Product.all.sort_by { |e| e.id }.reverse[0..5]
@@ -9,13 +8,22 @@ class StaticPagesController < ApplicationController
 
   def living
     @living_products = Categorie.find_by(name: "Living").products
+    if @living_products.nil?
+      redirect_to action: :landing_page
+    end
   end 
 
   def lighting
     @lighting_products = Categorie.find_by(name: "Lighting").products
+    if @lighting_products.nil?
+      redirect_to action: :landing_page
+    end
   end 
 
   def dining
     @dining_products = Categorie.find_by(name: "Dining").products
+    if @dining_products.nil?
+      redirect_to action: :landing_page
+    end
   end 
 end
