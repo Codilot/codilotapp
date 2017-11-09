@@ -10,14 +10,14 @@ class StaticPagesController < ApplicationController
     @living_products = Categorie.find_by(name: "Living").products
     if @living_products.nil?
       redirect_to home_path
-    end 
+    end
   end 
 
   def lighting
     @lighting_products = Categorie.find_by(name: "Lighting").products
     if @lighting_products.nil?
       redirect_to home_path
-    end 
+    end
   end 
 
   def dining
@@ -26,5 +26,4 @@ class StaticPagesController < ApplicationController
       redirect_to home_path
     end 
   end
-
 end
