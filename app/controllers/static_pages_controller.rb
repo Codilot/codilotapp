@@ -8,22 +8,22 @@ class StaticPagesController < ApplicationController
 
   def living
     @living_products = Categorie.find_by(name: "Living").products
-    if @living_products.nil?
-      redirect_to home_path
+    if @living_products.empty?
+      @category_notice = "This category doesn\'t seem to have any products at the moment, please check back at a later date."
     end
   end 
 
   def lighting
     @lighting_products = Categorie.find_by(name: "Lighting").products
-    if @lighting_products.nil?
-      redirect_to home_path
+    if @lighting_products.empty?
+      @category_notice = "This category doesn\'t seem to have any products at the moment, please check back at a later date."
     end
   end 
 
   def dining
     @dining_products = Categorie.find_by(name: "Dining").products
-    if @dining_products.nil?
-      redirect_to home_path
+    if @dining_products.empty?
+      @category_notice = "This category doesn\'t seem to have any products at the moment, please check back at a later date."
     end 
   end
 end
