@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   
   # create home_path and home_url - home_path return /home
   get '/home', to: 'static_pages#landing_page', as: 'home'
+
+  post 'static_pages/thank_you'
   
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
