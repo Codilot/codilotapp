@@ -1,0 +1,222 @@
+// Google Fonts
+@import url('https://fonts.googleapis.com/css?family=Muli:300,400,900');
+
+// Font Variables
+$font-stack: 'Muli', sans-serif; 
+
+//Colors
+$primary-color: rgba(255, 255, 255, 1);
+$secondary-color: rgba(175, 171, 165, 1);
+$shade-color: rgba(114, 158, 161, 1);
+$text-color: rgba(87,85,82, 1);
+$highlight-color: rgba(246, 254, 219, 1);
+$emphasis-color: rgba(172, 215, 236, 1);
+
+
+// Styles
+body {
+  font-family: $font-stack;
+  font-weight: 300;
+  color: $text-color;
+}
+
+h1, h2, h3, h6  {
+  font-weight: 900;
+  color: $secondary-color;
+}
+
+h4, h5 {
+  text-transform: uppercase;
+}
+
+
+
+.subline {
+  font-weight: 400;
+  font-size: 1.8em;
+}
+
+.prod-subline {
+  font-family: $font-stack;
+  font-weight: 300;
+  font-size: 1em;
+  text-transform: lowercase;
+}
+
+a,
+a:active,
+a:focus,
+a:visited {
+  color: $shade-color;
+}
+
+a:hover {
+  color: $emphasis-color;
+}
+
+
+
+//Content distance for fixed nav and footer
+.anchor-top {
+  margin-top: 70px;
+}
+
+.anchor-bottom {
+  height: 155px;
+}
+
+
+//Header
+.navbar-main {
+  background-color: $secondary-color;
+  z-index: 100;
+}
+
+.navbar-default .navbar-brand {
+  color: $primary-color;
+  font-size: 200%;
+  font-weight: 400;
+}
+.navbar-default .navbar-brand:hover {
+  color: $text-color;
+}
+
+.navbar-default .navbar-nav>li>a {
+  transition: all .3s linear .1s;
+  color: $primary-color;
+  font-size: 0.9em;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+}
+  .navbar-default .navbar-nav>li>a:hover,
+  .navbar-default .navbar-nav>li>a:active,
+  .navbar-default .navbar-nav>li>a:focus {
+  color: $secondary-color;
+  box-shadow: 0 -50px $primary-color inset;
+  outline-style: none;
+  }
+
+//Sticky Footer
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: $primary-color;
+  background-color: $secondary-color;
+  z-index: 100;
+}
+  .footer a,
+  .footer h3 {
+    color: $primary-color;
+  }
+
+.searchform {
+  margin-top: 20px;
+  width: 100%;
+}
+
+
+
+.footer-nav-btn {
+  text-align: center;
+}
+
+.footer-accordion ul {
+  list-style-type: none;
+  padding-left: 0;
+  color: $primary-color;
+}  
+
+
+.footer-baseline {
+  margin: 10px auto;  
+}
+
+.copyright-text {
+  text-align: center;
+  font-size: 0.8em;
+  color: $primary-color;
+}
+
+
+//Page styling
+//Landing_page
+
+.prod {
+  position: relative;
+}
+
+  .prod header {
+      position: absolute;
+      top: 20px;
+      max-width: 60%;
+    }
+
+  .prod h1,
+  .prod h2,
+  .prod h5,
+  .prod h6 {    
+    padding: 5px;
+    background-color: rgba(255,255,255, .9);
+    margin-left:-15px;
+    color: $shade-color;
+    text-shadow: none;
+  }
+
+  .prod h5 {
+    font-weight: 900;
+  }  
+
+  .prod a:hover img {
+    opacity: .5;
+  }
+  
+  .prod:hover header {
+    z-index: 2;
+  }
+
+  .prod:hover h1,
+  .prod:hover h2,
+  .prod:hover h5,
+  .prod:hover h6 {
+    background-color: $shade-color;
+    color: $primary-color;
+  }
+
+  .prod img {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin: auto;
+  }
+
+
+//Carousel
+#carousel-landing-page {
+margin: 30px auto;
+}
+
+.carousel-inner {
+  margin: auto;
+}
+
+.carousel-control {
+  opacity: 0.5;
+}
+
+.carousel-control.right {
+  background-image: none;
+}
+
+.carousel-control.left {
+  background-image: none;
+}  
+
+
+
+
+
+
+
+
+
