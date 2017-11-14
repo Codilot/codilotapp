@@ -1,6 +1,6 @@
 <%= flash[:notice] %>
 
-<%= form_with(url: "/static_pages/thank_you") do |form| %>
+<%= form_with(url: static_pages_thank_you_path, local: true) do |form| %>
   <div class="row">
     <div class="col-md-4">
       <div class="form-group">
