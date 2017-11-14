@@ -7,6 +7,14 @@ class Product < ApplicationRecord
   def create_categorie_from_name
     create_categorie(name: new_categorie_name) unless new_categorie_name.blank?
   end
+
+  def self.search(search_term)
+    if Rails.env.production?
+      Product.where("name ilike ?", "%#{search_term}%")
+    else
+      Product.where("name LIKE ?", "%#{search_term}%")
+    end  
+  end
   
   #image uploading
   mount_uploader :product_image, ProductImageUploader

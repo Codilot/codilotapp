@@ -27,7 +27,7 @@
         <%= @product.colour %>
       </p>
 
-      <% if @product.categorie != nil %>
+      <% if @product.categorie.present? %>
       <p> 
         <strong>Categorie:</strong> 
         <%= @product.categorie.name %> 
@@ -37,6 +37,19 @@
     </div>
   </div>
 
-  <%= link_to 'Edit', edit_product_path(@product) %> |
-  <%= link_to 'Back', products_path %>
+  
+  <div class="btn-control-group">
+    <%= link_to products_path, class: 'btn btn-default' do %>
+      <i class="glyphicon glyphicon-arrow-left"></i> Back
+    <% end %>
+
+    <%= link_to edit_product_path(@product), class: 'btn btn-default' do %>
+      <i class="glyphicon glyphicon-pencil"></i> Edit
+    <% end %>
+
+    <%= link_to @product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' do %>
+      <i class="glyphicon glyphicon-remove"></i> Destroy
+    <% end %>  
+  </div> 
+
 </div>

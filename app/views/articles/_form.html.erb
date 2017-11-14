@@ -11,22 +11,41 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %><br>
-    <%= form.text_field :title, id: :article_title %>
+  <div class="row">
+
+  <div class="form-group col-sm-6">
+    <%= form.label :title, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+      <%= form.text_field :title, id: :article_title, class: "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :description %><br>
-    <%= form.text_area :description, id: :article_description %>
+  <div class="form-group col-sm-6">
+    <%= form.label :image_url, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+      <%= form.text_field :image_url, id: :article_image_url, class: "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :image_url %><br>
-    <%= form.text_field :image_url, id: :article_image_url %>
+  <div class="form-group col-sm-6">
+    <%= form.label :description, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+      <%= form.text_area :description, id: :article_description, class: "form-control", rows:"10" %>
+    </div>
   </div>
+  </div><!-- end of row -->
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+
+
+
+  <div class="row" >
+    <div class="col-sm-12">
+      <div class="actions form-group">  
+          <%= button_tag(type: "submit", class: "btn btn-default btn-control-group") do %>
+            <i class=" glyphicon glyphicon-ok"></i> Submit
+          <% end %>
+      </div>
+    </div>
+  </div><!-- end of row -->
+
 <% end %>

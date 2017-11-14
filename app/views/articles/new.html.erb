@@ -1,7 +1,11 @@
 <div class="container">
-<h1>New Article</h1>
+  <h1>New Article</h1>
 
-<%= render 'form', article: @article %>
+  <%= render 'form', article: @article %>
 
-<%= link_to 'Back', articles_path %>
+  <div class="btn-control-group">
+    <%= link_to articles_path, class: 'btn btn-default' do %>
+      <i class="glyphicon glyphicon-arrow-left"></i> Back
+    <% end %>
+  </div> 
 </div>

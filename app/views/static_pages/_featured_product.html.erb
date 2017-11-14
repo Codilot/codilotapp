@@ -1,10 +1,12 @@
-<header> 
-  <h5>
-    <%= featured_product.name %> 
-    <span class="prod-subline"><%= featured_product.teaser %></span>
-    <span class="prod-subline"><%= featured_product.price %></span>
-  </h5>
-</header>  
-<% if featured_product.product_image.present? %>  
-  <%= link_to (image_tag(featured_product.product_image.url)), product_path(featured_product.id) %> 
+<%= link_to product_path(featured_product.id) do %>
+  <header> 
+    <h5>
+      <%= featured_product.name %> 
+      <span class="prod-subline"><%= featured_product.teaser %></span>
+      <span class="prod-subline"><%= featured_product.price %></span>
+    </h5>
+  </header>  
+  <% if featured_product.product_image.present? %>  
+    <%= image_tag(featured_product.product_image.url) %> 
+  <% end %> 
 <% end %> 

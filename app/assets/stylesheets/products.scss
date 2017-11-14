@@ -1,11 +1,68 @@
+// Google Fonts
+@import url('https://fonts.googleapis.com/css?family=Muli:300,400,900');
 
+// Font Variables
+$font-stack: 'Muli', sans-serif; 
+
+//Colors
+$primary-color: rgba(255, 255, 255, 1);
+$secondary-color: rgba(175, 171, 165, 1);
+$shade-color: rgba(114, 158, 161, 1);
+$text-color: rgba(87,85,82, 1);
+$highlight-color: rgba(246, 254, 219, 1);
+$emphasis-color: rgba(172, 215, 236, 1);
+
+
+h1 {
+	margin-bottom: 40px;
+}
+
+//Generaĺ styles
 img {
   width: 100%;
   height: auto;
 }
 
+.btn-control-group {
+	float: right;
+	margin: 20px 0;
+	color: $shade-color;
+}
+
 
 //Form
-.field {
-  margin: 20px auto;
-}  
+
+.form-image {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+    color: $shade-color;
+}
+
+.btn-file input[type=file] {
+	font-family: $font-stack;
+	color: $shade-color;
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+//Index page
+.prod-gallery {
+	margin-bottom: 15px;
+}
+

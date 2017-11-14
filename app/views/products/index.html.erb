@@ -8,14 +8,16 @@
   <div class="row prod-inner">
   
     <% @products.each do |product| %>
-      <%= render partial: "shared/product", locals: {product: product} %>
+      <%= render partial: "product", locals: {product: product} %>
     <% end %>
   
   </div>
 
 
-  <br>
 
-  <%= link_to 'New Product', new_product_path %>
-  <%= link_to 'Landing Page', home_path %>
+  <div class="btn-control-group">
+    <%= link_to new_product_path, class: 'btn btn-default' do %>
+      <i class="glyphicon glyphicon-plus"></i> New Product
+    <% end %>
+  </div>
 </div>

@@ -2,13 +2,7 @@
   <div class="container">
     <div class="row prod-inner">
       <div class="col-sm-6 prod">
-        <a href="#">
-          <header> 
-            <h1>Must haves</h1>
-            <h2 class="subline">Best picks of the season</h2>
-          </header>
-          <%= image_tag("placeholder.jpg", class: "img-responsive") %>
-        </a>
+        <%= render partial: "featured_article", locals: {featured_article: @featured_article} if @featured_article %>
       </div><!-- /.leftcol level 1-->
 
       <div class="col-sm-2">

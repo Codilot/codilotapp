@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :orders, only: [:index, :show, :create, :destroy]
   resources :categories, only: [:index, :show, :create, :edit, :destroy]
 
-  root 'products#index'
+  root 'static_pages#landing_page'
   get 'static_pages/about'
   get 'static_pages/contact'
 

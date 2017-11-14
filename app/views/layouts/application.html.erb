@@ -35,7 +35,7 @@
             <li><%= link_to 'Dining', static_pages_dining_path %></li>
             <li><%= link_to 'Lighting', static_pages_lighting_path %></li>
             <li><%= link_to 'All', products_path %></li>
-            <li><%= link_to 'About', static_pages_about_path %></li>
+            <li><%= link_to 'Trendscout', articles_path %></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
@@ -52,19 +52,23 @@
     <div class="anchor-bottom"></div>
     <footer class="footer">
       <div class="container">
+
         <!-- search form -->
         <div class="row">
           <div class="col-sm-6 text-center">
             <h3>Find your <span class="glyphicon glyphicon-heart"></span> product!</h3>
-          </div><!-- /.col-lg-6 -->
-          <div class="col-sm-6">
-            <div class="input-group searchform">
-              <input type="text" class="form-control" placeholder="Search for...">
-              <span class="input-group-btn">
-                <button class="btn btn-default" type="button">Go!</button>
-              </span>
-            </div><!-- /input-group -->
-          </div><!-- /.col-lg-6 -->
+          </div><!-- /.col-sm-6 -->
+      
+          <div class="col-sm-6">           
+              <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
+              <div class="searchform input-group">
+                <%= form.text_field :q, id: 'q', class: "form-control", value: params[:q], placeholder: "Search for..."  %>
+                <span class="input-group-btn">
+                  <%= form.submit 'Go', class: "btn btn-default" %>
+                </span>
+              </div><!-- /input-group -->
+              <% end %>
+          </div><!-- /.col-sm-6 -->
         </div><!-- /.row -->
         <hr>
         <section class="footer-accordion">
