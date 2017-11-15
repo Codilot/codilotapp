@@ -1,6 +1,4 @@
 class StaticPagesController < ApplicationController
-  def thank_you
-  end
   
   def landing_page
     @featured_product = Product.all.sort_by { |e| e.id }.reverse[0..5]
@@ -27,5 +25,15 @@ class StaticPagesController < ApplicationController
     if @dining_products.empty?
       @category_notice = "This category doesn\'t seem to have any products at the moment, please check back at a later date."
     end 
+  end
+
+  def thank_you
+    @name = params[:name]
+    @email = params[:email]
+    @message = params[:message]
+    ActionMailer::Base.mail(from: @email,
+        to: 'e.kooijman@gmail.com',
+        subject: "A new contact form message from #{@name}",
+        body: @message).deliver_now
   end
 end
