@@ -25,12 +25,14 @@
           <div class="form-group">
             <%= f.label :password, class: "control-label col-sm-3" %> 
             <div class="col-sm-9">
-            <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-            <i>(leave blank if you don't want to change it)</i>
+              <i>(leave blank if you don't want to change it)</i>
               <% if @minimum_password_length %>
                 <br />
                 <em><%= @minimum_password_length %> characters minimum</em>
               <% end %>
+
+                <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+
             </div>
           </div>
 
@@ -44,8 +46,9 @@
           <div class="form-group">
             <%= f.label :current_password, class: "control-label col-sm-3" %> 
             <div class="col-sm-9">
+             <i>(we need your current password to confirm your changes)</i>
               <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
-              <i>(we need your current password to confirm your changes)</i>
+             
             </div> 
           </div>
 
