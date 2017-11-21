@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout'}
+  resources :users
   resources :articles, :products
   resources :orders, only: [:index, :show, :create, :destroy]
   resources :categories, only: [:index, :show, :create, :edit, :destroy]
@@ -15,7 +17,8 @@ Rails.application.routes.draw do
   get '/home', to: 'static_pages#landing_page', as: 'home'
 
   post 'static_pages/thank_you'
-  
+
+    
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

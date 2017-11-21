@@ -1,9 +1,7 @@
 class ProductsController < ApplicationController
-  #authentication
-  http_basic_authenticate_with name: "eve", password: "secret", except: [:index, :show]  
-
-  #public actions
+  before_action :authenticate_user!, except: [:show, :index]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  
 
 
   # GET /products

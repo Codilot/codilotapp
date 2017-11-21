@@ -39,13 +39,16 @@
             <li><%= link_to 'contact', static_pages_contact_path %></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+            <%= render 'devise/menu/user_nav' %>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
+
+    <div class="container">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
 
 
     <%= yield %>
