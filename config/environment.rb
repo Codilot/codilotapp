@@ -5,7 +5,7 @@ require_relative 'application'
 Rails.application.initialize!
 
 
-# SendGrid mail settings contact form
+# SendGrid mail settings Usermailer
 ActionMailer::Base.smtp_settings = {
   address: 'smtp.sendgrid.net',
   port: '587',
@@ -15,3 +15,4 @@ ActionMailer::Base.smtp_settings = {
   domain: 'heroku.com',
   enable_starttls_auto: true
 }
+
