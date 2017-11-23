@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
 
   #redirect  after succesful login
-  def after_sign_in_path_for(resource)
-    user_path(current_user)
-  end
+  # def after_sign_in_path_for(resource)
+  #   static_pages_dining_path
+  # end
 end

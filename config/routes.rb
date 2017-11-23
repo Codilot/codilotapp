@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout'}
+  devise_for :users, path: '', controllers: { registrations: 'registrations' }, path_names: { sign_in: 'login', sign_out: 'logout'}
+  devise_scope :user do
+    get 'devise/registrations/confirmation_is_sent' 
+  end
 
   resources :users
   resources :articles, :products
@@ -18,7 +21,8 @@ Rails.application.routes.draw do
   get '/home', to: 'static_pages#landing_page', as: 'home'
 
   post 'static_pages/thank_you'
-
+  
+ 
     
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
