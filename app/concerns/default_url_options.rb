@@ -4,8 +4,7 @@ module DefaultUrlOptions
   
   def default_url_options
     {
-      :host => host,
-      :port => port
+      :host => host
     }
   end
   
@@ -13,10 +12,6 @@ private
 
   def host
     host = 'moebi.herokuapp.com'
-  end
-  
-  def port
-    port = '587'
   end
   
 end
