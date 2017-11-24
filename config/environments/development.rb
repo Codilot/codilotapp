@@ -3,10 +3,6 @@ Rails.application.configure do
 
   #moebi default url options 
   #config.action_mailer.default_url_options = { host: 'localhost:3000' }
-  #config.action_mailer.delivery_method = :smtp
-  
-  #moebi default url options
-  config.action_mailer.default_url_options = { host: 'moebi.herokuapp.com' }
 
   #moebi smtp settings
   config.action_mailer.delivery_method = :smtp
