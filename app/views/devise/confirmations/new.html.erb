@@ -10,9 +10,9 @@
       <%= devise_error_messages! %>
 
       <div class="form-group">
-        <%= f.label :email, class: "control-label col-sm-12" %>
+        <%= f.label :email, class: "sr-only" %>
         <div class="col-sm-12">
-          <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: "form-control" %>
+          <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: "form-control", placeholder: "Email address" %>
         </div>
       </div>
 
