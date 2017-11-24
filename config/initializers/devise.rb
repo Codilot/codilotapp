@@ -15,7 +15,7 @@ Devise.setup do |config|
   config.mailer_sender = 'donotreply@moebi.herokuapp.com'
 
   # Configure the class responsible to send e-mails.
-  config.mailer = 'AuthenticationMailer::Mailer'
+  config.mailer = 'AuthenticationMailer'
 
   # Configure the parent class responsible to send e-mails.
   #config.parent_mailer = 'ActionMailer::Base'
