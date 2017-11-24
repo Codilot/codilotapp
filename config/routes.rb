@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users, path: '', controllers: { registrations: 'registrations' }, path_names: { sign_in: 'login', sign_out: 'logout'}
+  devise_for :users, controllers: { registrations: 'registrations' }, skip: [:sessions]
   devise_scope :user do
+    get 'login', to: 'devise/sessions#new', as: :new_user_session
+    post 'login', to: 'devise/sessions#create', as: :user_session
+    match 'logout', to: 'devise/sessions#destroy', as: :destroy_user_session, via: Devise.mappings[:user].sign_out_via
     get 'devise/registrations/confirmation_is_sent' 
   end
 
