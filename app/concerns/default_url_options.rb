@@ -4,7 +4,7 @@ module DefaultUrlOptions
   
   def default_url_options
     { 
-      :protocol => protocol
+      :protocol => protocol,
       :host => host
     }
   end
