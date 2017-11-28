@@ -1,5 +1,9 @@
 <div class="container">	
-	<p id="notice"><%= notice %></p>
+	<% if notice %>
+      <div class="container alert alert-info" role="alert">
+        <p class="notice"><%= notice %></p>
+      </div>
+    <% end %>  
 
 	<p>
 	  <strong>First name:</strong>
