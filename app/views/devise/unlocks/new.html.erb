@@ -1,5 +1,5 @@
-<div class="container">
-  <div class="form-signup">
+<div class="container form-authentication form-small">
+  <div class="row form-authentication-inner">
 
     <h2 class="form-heading text-center brand">möbi</h2>
     <h3 class="form-heading text-center">
@@ -9,19 +9,19 @@
     <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
       <%= devise_error_messages! %>
 
-      <div class="form-group">
+      <div class="form-group row">
         <%= f.label :email, class: "sr-only" %>
         <div class="col-sm-12">
           <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email address" %>
         </div>
       </div>
 
-      <div class="actions col-sm-12">
+      <div class="actions">
         <%= f.submit "Resend instructions", class: "btn btn-lg btn-default btn-block" %>
       </div>
     <% end %>
 
-    <div class="form-signin-links text-center">
+    <div class="link-group">
       <%= render "devise/shared/links" %>
     </div>
   </div>

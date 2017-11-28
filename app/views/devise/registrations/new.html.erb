@@ -1,5 +1,5 @@
-<div class="container form-signup">
-  <div class="row">
+<div class="container form-authentication form-small">
+  <div class="row form-authentication-inner">
 
     <h2 class="form-heading text-center brand">möbi</h2>
     <h3 class="form-heading text-center">
@@ -12,7 +12,7 @@
       <div class="form-group row">
         <%= f.label :email, class: "control-label col-sm-12" %>
         <div class="col-sm-12">
-          <%= f.email_field :email, autofocus: true, class: "form-control" %>
+          <%= f.email_field :email, autofocus: true, placeholder: "john@example.com", class: "form-control" %>
         </div>
       </div>
 
@@ -23,7 +23,7 @@
           <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %> characters minimum)</em>
           <% end %>
-          <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+          <%= f.password_field :password, autocomplete: "off", placeholder: "Your password", class: "form-control" %>
         </div>
       </div>
 
@@ -34,7 +34,7 @@
         </div>
       </div>
 
-      <div class="actions col-sm-12">
+      <div class="actions">
         <%= f.submit "Sign up", class: "btn btn-lg btn-default btn-block" %>
       </div>
     <% end %>

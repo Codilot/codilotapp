@@ -242,23 +242,33 @@ margin: 30px auto;
 }
 
 
-//Form User Login Edit Signup
-.form-signin,
-.form-signup {
-  max-width: 330px;
-  padding: 25px;
-  margin: 0 auto;
+//Form User Authentication 
+
+.form-authentication {
   background-color: rgba(114, 158, 161, 0.4);
+  padding: 25px;
 }
 
-.form-heading,
+.form-small {
+  max-width: 330px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-authentication-inner {
+  border: 2px solid $primary-color;
+  margin: 0;
+  padding: 15px;
+}
+
+
 .form-heading {
   color: $primary-color; 
 }  
 
-  .form-heading h3 {
+h3.form-heading  {
     font-size: 150%;
-  }
+}
 
 .brand {
   width: 90px;
@@ -269,24 +279,24 @@ margin: 30px auto;
   font-size: 180%;
 }
 
-
-
-.form-user-edit .btn-block,
-.form-signin .form-heading,
-.form-signin .checkbox,
-.form-signin .btn-block,
-.form-signup .form-heading,
-.form-signup .btn-block {
+.form-authentication h2 {
+  color: $primary-color;
   margin-bottom: 30px;
 }
 
-.form-signin .checkbox {
+.form-authentication .btn-block,
+.form-authentication .form-heading,
+.form-authentication .checkbox,
+.form-authentication .form-group {
+  margin-bottom: 30px;
+}
+
+
+.form-authentication.checkbox {
   font-weight: normal;
 }
 
-.form-user-edit .form-control,
-.form-signin .form-control,
-.form-signup .form-control {
+.form-authentication .form-control {
   position: relative;
   height: auto;
   -webkit-box-sizing: border-box;
@@ -296,69 +306,51 @@ margin: 30px auto;
   font-size: 16px;
 }
 
-.form-signin .form-control:focus,
-.form-signup .form-control:focus {
+.form-authentication .form-control:focus {
   z-index: 2;
 }
-.form-signin input[type="email"] {
+
+.compact-form-group input[type="email"] {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-.form-signin input[type="password"] {
+.compact-form-group input[type="password"] {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 
-.form-signin input[type="checkbox"] {
+.form-authentication input[type="checkbox"] {
   margin-left: 0;
 }
 
 
-
-.form-signin-links {
+.form-authentication .link-group {
   color: $primary-color;
+  text-align: center;
 }
 
 
-.form-user-edit {
-  background-color: rgba(114, 158, 161, 0.4);
-  padding: 25px;
-}
-
-.form-signin .row,
-.form-signup .row,
-.form-user-edit .row {
-  border: 2px solid $primary-color;
-  margin: 0;
-}
-
-.form-signup .form-control,
-.form-user-edit .form-group {
-  margin-bottom: 30px;
-}
 
 
-.form-signin .btn-default:hover,
-.form-signup .btn-default:hover,
-.form-user-edit .btn-default:hover {
+
+
+.form-authentication .btn-default:hover {
   color: $primary-color;
   background-color: $shade-color;
 }
 
-.form-signin .btn-default,
-.form-signup .btn-default,
-.form-user-edit .btn-default {
+.form-authentication .btn-default {
   color: $shade-color;
 }
 
-.form-user-edit .glyphicon-user {
+.form-authentication .glyphicon-user {
   color: $primary-color;
   font-size: 240%;
 }
 
-.form-user-edit .circle {
+.form-authentication .circle {
   width: 60px;
   height: 60px; 
   padding-top: 10px;
@@ -369,7 +361,4 @@ margin: 30px auto;
 
 }
 
-.form-user-edit h2 {
-  color: $primary-color;
-  margin-bottom: 30px;
-}
+

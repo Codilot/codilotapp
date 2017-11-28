@@ -1,5 +1,5 @@
-<div class="container form-user-edit">
-  <div class="row inner"> 
+<div class="container form-authentication">
+  <div class="row form-authentication-inner"> 
       <div class="col-sm-12 text-center">
         <div class="circle">
           <span class="glyphicon glyphicon-user"></span>
@@ -72,13 +72,13 @@
 
       <div class="col-sm-6">
         <div class="row">
-          <div class="form-group col-sm-4">
+          <div class="col-sm-4">
           <%= link_to :back, class: "btn btn-lg btn-default" do %>
             <i class="glyphicon glyphicon-arrow-left"></i>
             Back
           <% end %>
           </div>
-          <div class="form-cancel-account form-group col-sm-8">
+          <div class="col-sm-8">
             <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-lg btn-default btn-block" %>
           </div>
         </div>
