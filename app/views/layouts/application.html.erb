@@ -46,15 +46,13 @@
     </nav>
     
     <% if notice %>
-      <div class="container alert alert-info" role="alert">
-        <p class="notice"><%= notice %></p>
-      </div>
-    <% end %>  
-    
-    <% if alert %>
-      <div class="container alert alert-warning" role="alert">
-        <p><%= alert %></p>
-      </div>
+        <div class="container alert alert-info" role="alert">
+          <p id="notice" class="notice"><%= notice %></p>
+        </div>
+    <% elsif alert %>
+        <div class="container alert alert-warning" role="alert">
+          <p id="alert"><%= alert %></p>
+        </div>
     <% end %>
 
 
