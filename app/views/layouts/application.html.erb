@@ -44,11 +44,19 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
+    
+    <% if notice %>
+      <div class="container alert alert-info alert-dismissible" role="alert">
+        <p class="notice"><%= notice %></p>
+      </div>
+    <% end %>  
+    
+    <% if alert %>
+      <div class="container alert alert-warning alert-dismissible" role="alert">
+        <p class="alert"><%= alert %></p>
+      </div>
+    <% end %>
 
-    <div class="container">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    </div>
 
 
     <%= yield %>
