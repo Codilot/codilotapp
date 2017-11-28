@@ -1,76 +1,90 @@
 <div class="container form-user-edit">
-  <div class="row"> 
+  <div class="row inner"> 
       <div class="col-sm-12 text-center">
         <div class="circle">
           <span class="glyphicon glyphicon-user"></span>
         </div>
         <h2>Edit your <%= resource_name.to_s.humanize %> account</h2>
       </div>
-      <div class="col-sm-12">
 
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
           <%= devise_error_messages! %>
 
-          <div class="form-group">
-            <%= f.label :email, class: "control-label col-sm-3" %>
-            <div class="col-sm-9">
-            <%= f.email_field :email, autofocus: true, class: "form-control" %>
+        <div class="col-sm-6">
+          <div class="form-group row">
+            <%= f.label :first_name, class: "control-label col-lg-3" %>
+            <div class="col-lg-9">
+              <%= f.text_field :first_name, autofocus: true, class: "form-control" %>
+            </div>
+          </div>
+          <div class="form-group row">
+            <%= f.label :last_name, class: "control-label col-lg-3" %>
+            <div class="col-lg-9">
+              <%= f.text_field :last_name, class: "form-control" %>
+            </div>
+          </div>
+          <div class="form-group row">
+            <%= f.label :email, class: "control-label col-lg-3" %>
+            <div class="col-lg-9">
+              <%= f.email_field :email, class: "form-control" %>
+            </div>
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <div>
+                Currently waiting confirmation for: <%= resource.unconfirmed_email %>
+              </div>
+            <% end %>
+          </div>
+          <div class="form-group row">
+            <%= f.label :current_password, class: "control-label col-lg-3" %> 
+            <div class="col-lg-9">
+              <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
+              <i>(we need your current password to confirm your changes)</i>
+            </div> 
+          </div>
+        </div>  
+
+          
+        <div class="col-sm-6">
+          <div class="form-group row">
+            <%= f.label :password, class: "control-label col-lg-3" %> 
+            <div class="col-lg-9">
+              <%= f.password_field :password, autocomplete: "off", placeholder: "(Leave blank if you don't want to change it)", class: "form-control" %>
             </div>
           </div>
 
-          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-          <% end %>
-
-          <div class="form-group">
-            <%= f.label :password, class: "control-label col-sm-3" %> 
-            <div class="col-sm-9">
-              <i>(leave blank if you don't want to change it)</i>
-              <% if @minimum_password_length %>
-                <br />
-                <em><%= @minimum_password_length %> characters minimum</em>
-              <% end %>
-
-                <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-
-            </div>
-          </div>
-
-          <div class="form-group">
-            <%= f.label :password_confirmation, class: "control-label col-sm-3" %>
-            <div class="col-sm-9">
+          <div class="form-group row">
+            <%= f.label :password_confirmation, class: "control-label col-lg-3" %>
+            <div class="col-lg-9">
               <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
             </div>  
           </div>
+        </div>
 
-          <div class="form-group">
-            <%= f.label :current_password, class: "control-label col-sm-3" %> 
-            <div class="col-sm-9">
-             <i>(we need your current password to confirm your changes)</i>
-              <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
-             
-            </div> 
-          </div>
+        <div class="clearfix"></div>
 
-          <div class="actions col-sm-12">
-            <%= f.submit "Update", class: "btn btn-lg btn-default btn-block" %>
-          </div>
+        <div class="actions col-sm-6">
+          <%= f.submit "Update", class: "btn btn-lg btn-default btn-block" %>
+        </div>
           
-        <% end %>
-   
-      <div class="col-sm-12 form-cancel-account">
-        <h5>Unhappy? Cancel your account here: </h5>
-        <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-lg btn-default btn-block" %>
+      <% end %> <!-- end form_for -->
+
+
+      <div class="col-sm-6">
+        <div class="row">
+          <div class="form-group col-sm-4">
+          <%= link_to :back, class: "btn btn-lg btn-default" do %>
+            <i class="glyphicon glyphicon-arrow-left"></i>
+            Back
+          <% end %>
+          </div>
+          <div class="form-cancel-account form-group col-sm-8">
+            <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-lg btn-default btn-block" %>
+          </div>
+        </div>
       </div>
 
-      <div class="col-sm-12 btn-control-group">
-      <%= link_to :back, class: "btn btn-default" do %>
-        <i class="glyphicon glyphicon-arrow-left"></i>
-        Back
-      <% end %>
-      </div>
-
-    </div>
+    
     
 
     

@@ -325,18 +325,17 @@ margin: 30px auto;
 .form-user-edit {
   background-color: rgba(114, 158, 161, 0.4);
   padding: 25px;
-  max-width: 500px;
 }
 
 .form-signin .row,
 .form-signup .row,
 .form-user-edit .row {
   border: 2px solid $primary-color;
-  margin:0;
+  margin: 0;
 }
 
 .form-signup .form-control,
-.form-user-edit .form-control {
+.form-user-edit .form-group {
   margin-bottom: 30px;
 }
 
