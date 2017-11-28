@@ -47,13 +47,11 @@
     
     <% if notice %>
       <div class="container alert alert-info" role="alert">
-        <p class="notice"><%= notice %></p>
+        <p id="notice" class="notice"><%= notice %></p>
       </div>
-    <% end %>  
-    
-    <% if alert %>
+    <% elsif alert %>
       <div class="container alert alert-warning" role="alert">
-        <p><%= alert %></p>
+        <p id="alert"><%= alert %></p>
       </div>
     <% end %>
 
