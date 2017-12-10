@@ -34,8 +34,39 @@
       </p> 
       <% end %>
 
+      <div class="row">
+        <% if @product.highest_rating_comment.present? || @product.lowest_rating_comment.present? %>
+          <div class="col-sm-12">
+            <hr>
+            <h5><strong>Rating</strong></h5>
+          </div>
+          <div class="col-sm-6">
+            <% if @product.highest_rating_comment.user.first_name.present? %>
+              <p>
+                <%= @product.highest_rating_comment.user.first_name %> reviewed this product:
+              </p>
+            <% end %>
+            <p>
+              <%= @product.highest_rating_comment.body %>
+            </p>
+          </div>
+          <div class="col-sm-6">
+            <% if @product.lowest_rating_comment.user.first_name.present? %>
+              <p>
+                <%= @product.lowest_rating_comment.user.first_name %> reviewed this product:
+              </p>
+            <% end %>
+            <p>
+              <%= @product.lowest_rating_comment.body %>
+            </p>
+          </div>
+        <% end %>
+      </div>
+
     </div>
   </div>
+
+
 
   
   <div class="btn-control-group">
@@ -53,3 +84,5 @@
   </div> 
 
 </div>
+
+

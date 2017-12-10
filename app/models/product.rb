@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
   attr_accessor :new_categorie_name 
   has_many :orders
+  has_many :comments
   belongs_to :categorie, required: false
   before_save :create_categorie_from_name
 
@@ -14,6 +15,14 @@ class Product < ApplicationRecord
     else
       Product.where("name LIKE ?", "%#{search_term}%")
     end  
+  end
+
+  def highest_rating_comment
+    comments.rating_desc.first
+  end
+
+  def lowest_rating_comment
+    comments.rating_asc.first
   end
   
   #image uploading
