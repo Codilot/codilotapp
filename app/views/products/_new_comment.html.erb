@@ -1,0 +1,31 @@
+<% if signed_in? %>
+    <hr>
+    <div class="row">
+      <div class="col-sm-12">
+        <h4>Add a review:</h4>
+      </div>
+      <%= form_for([@product, @product.comments.build], remote:true) do |f| %>
+        <div class="form-group col-sm-6">
+          <%= f.label :body, "Your Comment:", class: "control-label" %>
+          <%= f.text_area :body, class: "form-control", rows:"3"  %>
+        </div>
+        <div class="form-group col-sm-6">
+          <%= f.label :rating, "Your Rating:", class: "control-label" %>
+          <p><div class="rating"></div></p>
+        </div> 
+
+        
+       
+          <div class="col-sm-12">
+            <div class="actions form-group">  
+                <%= button_tag(type: "submit", class: "btn btn-default btn-control-group-left") do %>
+                  <i class=" glyphicon glyphicon-ok"></i> Submit
+                <% end %>
+            </div>
+          </div>
+
+
+      <% end %>
+    </div>
+ 
+<% end %>
