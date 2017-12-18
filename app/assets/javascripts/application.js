@@ -13,6 +13,6 @@
 //= require rails-ujs
 //= require turbolinks
 //= require jquery3
-//= require_tree ../../../vendor/assets/javascripts/.
+//= require jquery.raty
 //= require_tree .
 
