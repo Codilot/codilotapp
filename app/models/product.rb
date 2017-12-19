@@ -4,6 +4,12 @@ class Product < ApplicationRecord
   has_many :comments
   belongs_to :categorie, required: false
   before_save :create_categorie_from_name
+  validates :name, presence: true
+  validates :teaser, presence: true, length: { maximum: 40, 
+    too_long: "%{count} characters is the maximum allowed" }
+  validates :description, presence: true, length: { minimum: 200 }
+  validates :price, presence: true
+
 
   def create_categorie_from_name
     create_categorie(name: new_categorie_name) unless new_categorie_name.blank?

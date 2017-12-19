@@ -7,21 +7,21 @@ class StaticPagesController < ApplicationController
   end
 
   def living
-    @living_products = Categorie.find_by(name: "Living").products
+    @living_products = Categorie.find_by(name: "Living").products.page(params[:page]).per_page(8)
     if @living_products.empty?
       @category_notice = "This category doesn\'t seem to have any products at the moment, please check back at a later date."
     end
   end 
 
   def lighting
-    @lighting_products = Categorie.find_by(name: "Lighting").products
+    @lighting_products = Categorie.find_by(name: "Lighting").products.page(params[:page]).per_page(8)
     if @lighting_products.empty?
       @category_notice = "This category doesn\'t seem to have any products at the moment, please check back at a later date."
     end
   end 
 
   def dining
-    @dining_products = Categorie.find_by(name: "Dining").products
+    @dining_products = Categorie.find_by(name: "Dining").products.page(params[:page]).per_page(8)
     if @dining_products.empty?
       @category_notice = "This category doesn\'t seem to have any products at the moment, please check back at a later date."
     end 

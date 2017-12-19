@@ -55,6 +55,31 @@ a:hover {
 }
 
 
+.pagination {
+  cursor: default;
+  margin: auto;
+  a, span, em {
+    padding: 0.5em 1em;
+    display: block;
+    float: left;
+    border-left: 1px solid $secondary-color;
+    &:hover {
+      color: $primary-color; 
+      background-color: $secondary-color;
+    }
+  }
+  .disabled {
+    display: none;
+  }
+  .current {
+    font-weight: 400;
+    background-color:$secondary-color;
+    color: $primary-color;
+    &:hover {
+      background-color: $shade-color; 
+    }
+  } 
+}
 
 //Content distance for fixed nav and footer
 .anchor-top {
@@ -64,6 +89,8 @@ a:hover {
 .anchor-bottom {
   height: 220px;
 }
+
+
 
 
 //Header

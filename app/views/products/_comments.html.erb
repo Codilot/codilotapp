@@ -1,8 +1,10 @@
 <div class="product-reviews">
+  <div class="row">
+  <hr>
     <% @comments.each do |comment| %>
-        <div class="row">
-          <div class="col-sm-12">
-              <hr>
+        
+          <div class="col-sm-4">
+              
               <p>
                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                 <%= comment.user.first_name %> <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small>
@@ -10,7 +12,12 @@
               <p><%= "Rating: #{comment.rating}/5" %></p>
               <div class="rated" data-score="<%= comment.rating %>"></div>
               <p><%= comment.body %></p>
-            </div>
-        </div>
+              <hr>
+
+          </div>     
     <% end %>
+    </div>
+    <div class="text-center">
+      <%= will_paginate @comments, previous_label: "Previous", next_label: "Next", inner_window: 1, outter_window: 0 %>
+    </div>
 </div>
