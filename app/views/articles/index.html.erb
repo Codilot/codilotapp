@@ -11,20 +11,22 @@
         <header>
           <h5><%= article.title %></h5>
         </header>
+        
+        <% if signed_in? && current_user.admin? %>
+          <div class="btn-group">  
+            <%= link_to article, class: 'btn btn-default btn-xs' do %>
+              <i class="glyphicon glyphicon-eye-open"></i>
+            <% end %>
 
-        <div class="btn-group">  
-          <%= link_to article, class: 'btn btn-default btn-xs' do %>
-            <i class="glyphicon glyphicon-eye-open"></i>
-          <% end %>
+            <%= link_to edit_article_path(article), class: 'btn btn-default btn-xs' do %>
+              <i class="glyphicon glyphicon-pencil"></i>
+            <% end %>
 
-          <%= link_to edit_article_path(article), class: 'btn btn-default btn-xs' do %>
-            <i class="glyphicon glyphicon-pencil"></i>
-          <% end %>
-
-          <%= link_to article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default btn-xs' do %>
-            <i class="glyphicon glyphicon-remove"></i>
-          <% end %>
-        </div>
+            <%= link_to article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default btn-xs' do %>
+              <i class="glyphicon glyphicon-remove"></i>
+            <% end %>
+          </div>
+        <% end %>
 
 
       </div>
@@ -32,12 +34,13 @@
   
   </div>
 
-
-  <div class="btn-control-group">
-    <%= link_to new_article_path, class: 'btn btn-default' do %>
-      <i class="glyphicon glyphicon-plus"></i> New Article
-    <% end %>
-  </div>
+  <% if signed_in? && current_user.admin? %>
+    <div class="btn-control-group">
+      <%= link_to new_article_path, class: 'btn btn-default' do %>
+        <i class="glyphicon glyphicon-plus"></i> New Article
+      <% end %>
+    </div>
+  <% end %>
 
 
 </div>

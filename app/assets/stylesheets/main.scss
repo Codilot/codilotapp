@@ -78,6 +78,9 @@ a:hover {
     &:hover {
       background-color: $shade-color; 
     }
+  }
+  a.previous_page {
+    border-left: none;
   } 
 }
 

@@ -93,13 +93,17 @@
       <i class="glyphicon glyphicon-arrow-left"></i> Back
     <% end %>
 
-    <%= link_to edit_product_path(@product), class: 'btn btn-default' do %>
-      <i class="glyphicon glyphicon-pencil"></i> Edit
-    <% end %>
+    <% if signed_in? && current_user.admin? %>
+    
+      <%= link_to edit_product_path(@product), class: 'btn btn-default' do %>
+        <i class="glyphicon glyphicon-pencil"></i> Edit
+      <% end %>
 
-    <%= link_to @product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' do %>
-      <i class="glyphicon glyphicon-remove"></i> Destroy
-    <% end %>  
+      <%= link_to @product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' do %>
+        <i class="glyphicon glyphicon-remove"></i> Destroy
+      <% end %>  
+
+    <% end %>
   </div> 
 
 </div>

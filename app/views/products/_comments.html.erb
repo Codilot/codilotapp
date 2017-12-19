@@ -12,6 +12,15 @@
               <p><%= "Rating: #{comment.rating}/5" %></p>
               <div class="rated" data-score="<%= comment.rating %>"></div>
               <p><%= comment.body %></p>
+
+                <% if signed_in? && current_user.admin? %>
+                
+                    <%= link_to(product_comment_path(comment.product, comment), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-default btn-sm') do %>
+                       <span class="glyphicon glyphicon-remove"></span> Destroy Review
+                    <% end%>
+           
+                
+                <% end%>
               <hr>
 
           </div>     
