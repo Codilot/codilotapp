@@ -36,6 +36,8 @@ class Ability
       if user.admin?  # additional permissions for administrators
         can :manage, :all
       end
+    else
+      can :read, :all
     end
 
   end
