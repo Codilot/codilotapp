@@ -1,5 +1,11 @@
 class RegistrationsController < Devise::RegistrationsController
-  
+  def create
+    super
+    if @user.persisted?
+      UserMailer.welcome(@user).deliver_now
+    end
+  end
+
   def after_sign_up_path_for(resource)
     devise_registrations_confirmation_is_sent_path
   end
