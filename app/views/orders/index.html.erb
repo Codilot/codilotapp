@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>All Orders</h1>
+  <% @orders.each do |order| %>
+    <div class="row">
+      <%= link_to(order_path(order)) do %>
+        <div class="col-xs-12">
+          <h4>Order # <%= order.id %></h4>    
+        </div>  
+        <div class="col-xs-5">
+          <h5><%= order.product.name %></h5>
+        </div>
+        <div class="col-xs-4">
+          <h5><%= order.product.price %></h5>
+        </div>
+        <div class="col-xs-3">
+        <%= link_to "View Product", order.product %>
+        </div>
+        <div class="col-xs-12">
+          <hr>
+        </div>
+      <% end %>
+    </div> 
+  <% end %>
+</div>

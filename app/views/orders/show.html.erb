@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <h1>Order <%= @order.id %></h1>
+     
+        <h5><%= @order.product.name %></h5>
+        <p><%= @order.product.teaser %></p>
+        <p><%= @order.product.description %></p>
+        <p>Price: <%= @order.product.price %></p>
+        <p><strong> Total: <%= @order.total %></strong></p>
+    
+    
+  </div>
+</div>
