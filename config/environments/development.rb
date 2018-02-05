@@ -1,10 +1,11 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  #moebi default url options 
-  #config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  #mailer url and assets options 
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  config.action_mailer.asset_host = 'localhost:3000'
 
-  #moebi smtp settings
+  #smtp settings
   config.action_mailer.delivery_method = :smtp
 
   # In the development environment your application's code is reloaded on

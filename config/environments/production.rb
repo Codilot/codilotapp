@@ -2,7 +2,8 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   #moebi default url options
-  #config.action_mailer.default_url_options = { host: 'moebi.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'moebi.herokuapp.com' }
+  config.action_mailer.asset_host = 'moebi.herokuapp.com'
 
   #moebi smtp settings
   config.action_mailer.delivery_method = :smtp
