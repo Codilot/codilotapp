@@ -6,4 +6,8 @@ class User < ApplicationRecord
    
   has_many :orders
   has_many :comments
+  
+  def name
+    [first_name, last_name].join(' ')
+  end
 end
