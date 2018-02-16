@@ -127,7 +127,21 @@ RSpec.describe UsersController, type: :controller do
    
   # ===================================
   describe 'POST #create' do 
-
+    context "creates a User" do 
+      before do 
+      post :create, :params => { :user => { :email => "new_user@example.com",
+                                          :password => "foobar", 
+                                          :admin => false
+                                        } }
+      @new_user =  User.create!(email: "new_user@example.com",
+                                password:"foobar")
+      sign_in @new_user
+      end
+      it "redirects to the login page" do
+      expect(response).to redirect_to(new_user_session_path)
+      expect(response.body).to include("redirected")
+      end
+    end
   end
 
   # ===================================
