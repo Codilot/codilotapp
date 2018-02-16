@@ -6,8 +6,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @user = current_user
-    if @user.admin?
+    if current_user.admin?
       @users = User.all.page(params[:page]).per_page(10)
     else
       redirect_to :root, notice: 'The page you tried to reach is for admin only.'
@@ -20,8 +19,12 @@ class UsersController < ApplicationController
   end
 
   # GET /users/new
-  def new
-    @user = User.new
+  def new 
+    if current_user.admin?
+      @user = User.new
+    else
+      redirect_to :root, notice: 'The page you tried to reach is for admin only.'
+    end
   end
 
   # GET /users/1/edit
