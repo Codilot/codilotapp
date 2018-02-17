@@ -129,17 +129,14 @@ RSpec.describe UsersController, type: :controller do
   describe 'POST #create' do 
     context "creates a User" do 
       before do 
-      post :create, :params => { :user => { :email => "new_user@example.com",
-                                          :password => "foobar", 
-                                          :admin => false
-                                        } }
+      @request.env["devise.mapping"] = Devise.mappings[:user]
       @new_user =  User.create!(email: "new_user@example.com",
                                 password:"foobar")
       sign_in @new_user
       end
-      it "redirects to the login page" do
-      expect(response).to redirect_to(new_user_session_path)
-      expect(response.body).to include("redirected")
+      it "sends devise confirmation instructions" do
+      expect(response).to be_ok
+      expect(response).to render_template('devise/mailer/confirmation_instructions')
       end
     end
   end

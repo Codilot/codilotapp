@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.4'
+ruby '2.4.1'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -52,6 +52,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '~> 3.7'
   gem 'rails-controller-testing'
+  gem "factory_bot_rails", "~> 4.0"
 end
 
 group :development do
