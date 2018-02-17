@@ -3,21 +3,11 @@ require 'rails_helper'
 RSpec.describe UsersController, type: :controller do
 
    
-  let(:user) {User.create!(
-      email:      "john@example.com",
-      password:   "foobar" 
-    )}
+  let(:user) {FactoryBot.create(:user)}
 
-   let(:other_user) {User.create!(
-      email:      "jane@example.com",
-      password:   "foobar" 
-    )}
+  let(:other_user) {FactoryBot.create(:other_user)}
 
-   let(:admin) {User.create!(
-      email:      "admin@example.com",
-      password:   "foobar", 
-      admin:      true
-    )}
+  let(:admin) {FactoryBot.create(:admin)}
 
   # ===================================
   describe 'GET #index' do 
@@ -129,20 +119,29 @@ RSpec.describe UsersController, type: :controller do
   describe 'POST #create' do 
     context "creates a User" do 
       before do 
-      @request.env["devise.mapping"] = Devise.mappings[:user]
-      @new_user =  User.create!(email: "new_user@example.com",
-                                password:"foobar")
-      sign_in @new_user
+        new_user =  FactoryBot.create(:new_user)
+        sign_in new_user
       end
       it "sends devise confirmation instructions" do
-      expect(response).to be_ok
-      expect(response).to render_template('devise/mailer/confirmation_instructions')
+        expect(response).to be_ok
+        expect(response).to render_template('devise/mailer/confirmation_instructions')
       end
     end
   end
 
   # ===================================
   describe 'GET #edit' do 
+    context 'when a user is logged in' do
+      before do 
+        sign_in user
+      end
+      it 'redirects to user edit page' do
+        get :edit, params: {id: user.id}
+        expect(assigns(:user)).to eq user
+        expect(response).to be_ok
+        expect(response).to render_template('edit')
+      end
+    end
   end
 
   # ===================================

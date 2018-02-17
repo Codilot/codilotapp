@@ -1,11 +1,24 @@
 require 'rails_helper'
 
+
+
 describe StaticPagesController, type: :controller do 
-  context 'GET #landing_page' do 
-  	it 'renders the landing_page template' do 
-      get :landing_page
-      expect(response).to be_ok
-      expect(response).to render_template('landing_page')
-  	end
-  end
+
+  
+    get_actions = [[:landing_page, 'landing_page'], 
+                   [:about, 'about'],
+                   [:contact, 'contact'],
+                   [:dining, 'dining'],
+                   [:lighting, 'lighting'],
+                   [:living, 'living']]
+
+    get_actions.each do |action|  
+      it "renders the #{action[1]} template" do
+        get action[0]
+        expect(response).to be_ok
+        expect(response).to render_template(action[1])
+      end
+    end
+ 
+
 end
