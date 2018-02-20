@@ -6,9 +6,10 @@
 
 
   <div class="row">
-  
-    <% @lighting_products.each do |product| %>
-      <%= render partial: "shared/product", locals: {product: product} %>
+    <% if @lighting_products.present? %>
+	    <% @lighting_products_paginated.each do |product| %>
+	      <%= render partial: "shared/product", locals: {product: product} %>
+	    <% end %>
     <% end %>
   
   </div>
