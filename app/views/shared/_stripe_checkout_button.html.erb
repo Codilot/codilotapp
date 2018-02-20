@@ -1,0 +1,11 @@
+<script
+  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+  data-amount="<%= @product.price * 100 %>"
+  data-name="moebi.herokuapp"
+  data-description="<%= @product.name %>"
+  data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+  data-locale="auto"
+  data-zip-code="true"
+  data-currency="eur">
+</script>
