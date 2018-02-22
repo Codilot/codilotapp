@@ -16,7 +16,7 @@ class PaymentsController < ApplicationController
       Order.create(
         product_id: @product.id, 
         user_id: @user.id, 
-        total: @product.price.to_i
+        total: @product.price
         )
       redirect_to payments_purchase_path
       UserMailer.confirmation_purchase(@user, @product).deliver_now
