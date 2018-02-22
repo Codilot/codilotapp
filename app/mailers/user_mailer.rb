@@ -8,4 +8,12 @@ class UserMailer < ApplicationMailer
 			  subject: "A new contact form message from #{name}")
 	end
 
+	def confirmation_purchase(user, product)
+		@product = product
+		@user = user
+		mail( from: "donotreply@moebi.herokuapp.com",
+			  to: @user.email,
+			  subject: "Confirmation of your purchase at moebi")
+	end
+
 end

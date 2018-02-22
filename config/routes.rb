@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  
+
+
   devise_for :users, controllers: { registrations: 'registrations' }, skip: [:sessions]
   devise_scope :user do
     get 'login', to: 'devise/sessions#new', as: :new_user_session
@@ -27,8 +30,8 @@ Rails.application.routes.draw do
 
   post 'static_pages/thank_you'
   
- 
-    
+  post 'payments/create' 
+  get  'payments/purchase'  
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

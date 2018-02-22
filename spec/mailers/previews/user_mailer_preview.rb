@@ -4,8 +4,10 @@ class UserMailerPreview < ActionMailer::Preview
     UserMailer.contact_form("e.kooijman@gmail.com", "Eve", "Hallihallo")
   end 
 
-   def welcome
+   def confirmation_purchase
    	user =  User.all.first
-    UserMailer.welcome(user)
-  end 
+   	product = Product.all.first
+    UserMailer.confirmation_purchase(user, product)
+   end 
+
 end

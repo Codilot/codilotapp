@@ -1,0 +1,21 @@
+<div class="container text-center">
+  <h1>Thank you for your purchase</h1>
+  <h3>Great choice!</h3>
+  <p>We'll take good care of bringing your piece of furniture on your way.</p>
+</div>
+<div class="container text-center more_shopping">
+  <%= link_to products_path, class: 'btn btn-default' do %>
+      <i class="glyphicon glyphicon-shopping-cart"></i> Do some more shopping
+    <% end %>
+</div>
+<div class="container text-center latest_products">
+	<hr>
+	<h3>Have a look at our latest products</h3>
+	<div class="row">
+		<% if @latest_products.present? %>
+		  <% @latest_products.each do |product| %>
+		    <%= render partial: "shared/product", locals: {product: product} %>
+		  <% end %>
+		<% end %>
+	</div>
+</div>
