@@ -2,9 +2,9 @@
   src="https://checkout.stripe.com/checkout.js" class="stripe-button"
   data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
   data-amount="<%= @product.price*100 %>"
-  data-name="<%= @product.name %>"
-  data-description="<%= @product.teaser %>"
-  data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+  data-name="möbi"
+  data-description="<%= @product.name %>"
+  data-image="<%= @product.product_image.url %>"
   data-locale="auto"
   data-zip-code="true"
   data-currency="eur">
