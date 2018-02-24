@@ -1,9 +1,15 @@
+
+<script src="https://checkout.stripe.com/checkout.js"></script>
+
+<button id="stripeButton" class="btn btn-default">Buy Now</button>
+
 <script>
 var handler = StripeCheckout.configure({
   key: '<%= Rails.configuration.stripe[:publishable_key] %>',
   image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
   locale: 'auto',
   token: function(token, args) { 
+  	    console.log(token)
         document.getElementById("stripeToken").value = token.id;
         document.getElementById("stripeEmail").value = token.email;
         document.getElementById("chargeForm").submit();
