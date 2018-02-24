@@ -20,5 +20,9 @@ $(document).on('turbolinks:load', function() {
     }
   });
 
-
 });
+
+  $('#registrate_before').click(function(){
+    console.log('click')
+    $('#alert').text('You need to be registrated, before you can buy this product')
+  });
