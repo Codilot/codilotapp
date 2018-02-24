@@ -1,0 +1,37 @@
+<script src="https://checkout.stripe.com/checkout.js"></script>
+
+  <%= hidden_field_tag(:product_id, @product.id) %>
+  <%= hidden_field_tag 'stripeToken' %>
+  <%= hidden_field_tag 'stripeEmail' %>
+
+<button id="customButton">Purchase</button>
+
+<script>
+var handler = StripeCheckout.configure({
+  key: '<%= Rails.configuration.stripe[:publishable_key] %>',
+  image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+  locale: 'auto',
+  token: function(token) {
+    $('input#stripeToken').val(token.id);
+    $('input#stripeEmail').val(token.email);
+    $('chargeForm').submit();
+  }
+});
+
+document.getElementById('customButton').addEventListener('click', function(e) {
+  // Open Checkout with further options:
+  handler.open({
+    name: 'möbi',
+    description: '<%= @product.name %>',
+    zipCode: true,
+    currency: 'eur',
+    amount: <%= @amount %>
+  });
+  e.preventDefault();
+});
+
+// Close Checkout on page navigation:
+window.addEventListener('popstate', function() {
+  handler.close();
+});
+</script>
