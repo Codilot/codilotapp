@@ -40,14 +40,19 @@
       <% end %>
 
       
+
+      <% if current_user.present? %>
+        <%= form_with(url: '/payments/create', id: 'chargeForm') do |form| %>
+          <%= render partial: "shared/stripe_checkout_button" %>  
+          <%= hidden_field_tag(:product_id, @product.id) %>
+        <% end %> 
+      <% else %>
+        <%= link_to new_user_registration_path, class: 'btn btn-default' do %>
+        <i class="glyphicon glyphicon-shopping-cart"></i> Buy now
+      <% end %>
         
 
-      <%= form_with(url: '/payments/create', id: 'chargeForm') do |form| %>
-        <%= render partial: "shared/custom_stripe_checkout_button" %>  
-        <%= hidden_field_tag 'stripeToken' %>
-        <%= hidden_field_tag 'stripeEmail' %>
-        <%= hidden_field_tag(:product_id, @product.id) %>
-      <% end %> 
+      <% end %>
 
 
       <div class="row">
