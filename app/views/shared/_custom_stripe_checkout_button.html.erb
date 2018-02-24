@@ -4,7 +4,10 @@
   <%= hidden_field_tag 'stripeToken' %>
   <%= hidden_field_tag 'stripeEmail' %>
 
-<button id="customButton">Purchase</button>
+<button id="customButton" class="btn btn-default purchase-btn">
+ <i class="glyphicon glyphicon-shopping-cart"></i>
+  Buy now
+</button>
 
 <script>
 var handler = StripeCheckout.configure({
