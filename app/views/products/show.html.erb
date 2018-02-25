@@ -42,9 +42,7 @@
       
 
       <% if current_user.present? %>
-        <%= form_with(url: '/payments/create', id: 'chargeForm') do |form| %>
-          <%= render partial: "shared/stripe_checkout_button" %>  
-        <% end %> 
+          <%= render partial: "shared/custom_stripe_checkout_button" %>  
       <% else %>
         <%= link_to new_user_registration_path, id:'registrate_before', class: 'btn btn-default purchase-btn' do %>
           <i class="glyphicon glyphicon-shopping-cart"></i> Buy now

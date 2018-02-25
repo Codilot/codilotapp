@@ -1,13 +1,15 @@
-<script
-  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-  data-amount="<%= @product.price*100 %>"
-  data-name="möbi"
-  data-description="<%= @product.name %>"
-  data-image="<%= @product.product_image.url %>"
-  data-locale="auto"
-  data-zip-code="true"
-  data-currency="eur">
-</script>
+<%= form_with(url: '/payments/create', id: 'chargeForm') do |form| %>
+	<script
+	  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+	  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+	  data-amount="<%= @product.price*100 %>"
+	  data-name="möbi"
+	  data-description="<%= @product.name %>"
+	  data-image="<%= @product.product_image.url %>"
+	  data-locale="auto"
+	  data-zip-code="true"
+	  data-currency="eur">
+	</script>
 
-<%= hidden_field_tag(:product_id, @product.id) %>
+	<%= hidden_field_tag(:product_id, @product.id) %>
+<% end %> 

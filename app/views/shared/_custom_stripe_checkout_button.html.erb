@@ -1,3 +1,4 @@
+<%= form_with(url: '/payments/create', id: 'chargeForm') do |form| %>
 <script src="https://checkout.stripe.com/checkout.js"></script>
 
   <%= hidden_field_tag(:product_id, @product.id) %>
@@ -14,15 +15,15 @@ var handler = StripeCheckout.configure({
   key: '<%= Rails.configuration.stripe[:publishable_key] %>',
   image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
   locale: 'auto',
-  token: function(token) {
-    $('input#stripeToken').val(token.id);
-    $('input#stripeEmail').val(token.email);
-    $('chargeForm').submit();
+  token: function(token, args) {
+    $('#stripeToken').val(token.id);
+    $('#stripeEmail').val(token.email);
+    $('#chargeForm').submit();
   }
 });
 
-document.getElementById('customButton').addEventListener('click', function(e) {
-  var productAmount = <%= @amount %>
+$('#customButton').click(function(e) {
+  var productAmount = <%= @product.price*100.to_i %>;
   // Open Checkout with further options:
   handler.open({
     name: 'möbi',
@@ -39,3 +40,4 @@ window.addEventListener('popstate', function() {
   handler.close();
 });
 </script>
+<% end %>

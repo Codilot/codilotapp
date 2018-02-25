@@ -18,7 +18,6 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @comments = @product.comments.order("created_at DESC").page(params[:page]).per_page(6)
-    @amount = (@product.price * 100).to_i
   end
 
   # GET /products/new
