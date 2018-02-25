@@ -410,3 +410,14 @@ h3.form-heading  {
   color: $primary-color;
   background-color: $highlight-color;
 }
+
+
+.stripe-button-el {
+  background-image: none;
+  background-color: $shade-color;
+}
+
+.stripe-button-el:hover {
+  background-image: none;
+  background-color: $highlight-color;
+}
