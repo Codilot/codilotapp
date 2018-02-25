@@ -1,43 +1,45 @@
 <%= form_with(url: '/payments/create', id: 'chargeForm') do |form| %>
-<script src="https://checkout.stripe.com/checkout.js"></script>
-
   <%= hidden_field_tag(:product_id, @product.id) %>
   <%= hidden_field_tag 'stripeToken' %>
   <%= hidden_field_tag 'stripeEmail' %>
+<% end %>
 
 <button id="customButton" class="btn btn-default purchase-btn">
  <i class="glyphicon glyphicon-shopping-cart"></i>
   Buy now
 </button>
-
+<!--script src="https://checkout.stripe.com/checkout.js"></script-->
 <script>
-var handler = StripeCheckout.configure({
-  key: '<%= Rails.configuration.stripe[:publishable_key] %>',
-  image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
-  locale: 'auto',
-  token: function(token, args) {
-    $('#stripeToken').val(token.id);
-    $('#stripeEmail').val(token.email);
-    $('#chargeForm').submit();
-  }
-});
+$(function(){
+  $.getScript("https://checkout.stripe.com/checkout.js", function() {
+    var handler = StripeCheckout.configure({
+      key: '<%= Rails.configuration.stripe[:publishable_key] %>',
+      image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+      locale: 'auto',
+      token: function(token, args) {
+        $('#stripeToken').val(token.id);
+        $('#stripeEmail').val(token.email);
+        $('#chargeForm').submit();
+      }
+    });
 
-$('#customButton').click(function(e) {
-  var productAmount = <%= @product.price*100.to_i %>;
-  // Open Checkout with further options:
-  handler.open({
-    name: 'möbi',
-    description: '<%= @product.name %>',
-    zipCode: true,
-    currency: 'eur',
-    amount: productAmount
+    $('#customButton').click(function(e) {
+      var productAmount = <%= @product.price*100.to_i %>;
+      // Open Checkout with further options:
+      handler.open({
+        name: 'möbi',
+        description: '<%= @product.name %>',
+        zipCode: true,
+        currency: 'eur',
+        amount: productAmount
+      });
+      e.preventDefault();
+    });
+
+    // Close Checkout on page navigation:
+    $(window).on('popstate', function(e){
+      handler.close();
+    });
   });
-  e.preventDefault();
-});
-
-// Close Checkout on page navigation:
-window.addEventListener('popstate', function() {
-  handler.close();
 });
 </script>
-<% end %>
