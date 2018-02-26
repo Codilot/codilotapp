@@ -42,11 +42,11 @@
       
 
       <% if current_user.present? %>
-          <%= render partial: "shared/custom_stripe_checkout_button" %>  
+        <%= render partial: "shared/custom_stripe_checkout_button" %>  
       <% else %>
-        <%= link_to new_user_registration_path, id:'registrate_before', class: 'btn btn-default purchase-btn' do %>
-          <i class="glyphicon glyphicon-shopping-cart"></i> Buy now
-        <% end %>
+
+        <%= render partial: "signin_before_purchase_modal" %> 
+
       <% end %>
 
 

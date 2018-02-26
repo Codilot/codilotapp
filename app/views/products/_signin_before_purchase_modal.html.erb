@@ -1,0 +1,37 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-default primary-btn" data-toggle="modal" data-target="#before_purchase_modal">      
+  <i class="glyphicon glyphicon-shopping-cart"></i> Buy now
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="before_purchase_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Please Login or Registrate first before you continue</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm-6">
+            <p><b>Please log in before you continue</b></p>
+            <%= link_to new_user_session_path, class: 'btn btn-default primary-btn' do %>
+              Login
+            <% end %>
+          </div>
+          <div class="col-sm-6">
+            <p><b>Don't have an account yet?</b></p>
+            <%= link_to new_user_registration_path, class: 'btn btn-default primary-btn' do %>
+                Registrate
+            <% end %>
+          </div>
+        </div>
+        
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
