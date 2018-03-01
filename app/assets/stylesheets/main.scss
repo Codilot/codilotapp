@@ -166,11 +166,22 @@ a:hover {
   width: 100%;
 }
 
-
-
-.footer-nav-btn {
-  text-align: center;
+@media (max-width: 576px) {  
+  .searchform-header {
+    font-size: 1.2em;
+  }
 }
+
+
+
+.footer-nav-link {
+  text-align: center;
+  h4 {
+    font-size: .8em;
+    margin-bottom: 20px;
+  }
+}
+
 
 .footer-accordion ul {
   list-style-type: none;
@@ -408,14 +419,5 @@ h3.form-heading  {
 }
 
 
-.stripe-button-el {
-  background-image: none;
-  background-color: $shade-color;
-}
 
-.stripe-button-el:hover {
-  background-image: none;
-  background-color: $highlight-color;
-}
 
-//Show Product
