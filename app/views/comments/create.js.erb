@@ -7,8 +7,10 @@ $("#new_comment").fadeOut(400, function() {
   $(this).html(reviewSent).fadeIn(400);
 });
 
-refreshRating();
+
 
 $("#average-rating").attr('data-score', "<%= @product.average_rating %>");
+
 $(".product-reviews").prepend("<%= j render @comment %>");
 
+refreshRating();
