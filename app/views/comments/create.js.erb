@@ -9,7 +9,7 @@ $("#new_comment").fadeOut(400, function() {
 
 $(".product-reviews").prepend("<%= j render @comment %>");
 
-refreshRating();
+
 
 $("#average-rating").attr('data-score', "<%= @product.average_rating %>");
 
