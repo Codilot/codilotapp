@@ -1,5 +1,6 @@
 <div class="item<%= " active" if group == @product_slide_groups.first %>">
   <% group.each do |product| %>
+    
     <div class="col-xs-4 prod">
       <%= link_to product_path(product) do %>
         <% if product.product_image? %>
@@ -10,5 +11,6 @@
         </div>
       <% end %>
     </div>
+
   <% end %>
 </div>
