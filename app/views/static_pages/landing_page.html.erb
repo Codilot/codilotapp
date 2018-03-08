@@ -1,11 +1,13 @@
-<% cache do %>
+
 <section class="season-prod">
   <div class="container">
     <div class="row prod-inner">
+
       <div class="col-sm-6 prod">
         <%= render partial: "featured_article", locals: {featured_article: @featured_article} if @featured_article %>
       </div><!-- /.leftcol level 1-->
 
+      <% cache @featured_product do %> 
       <div class="col-sm-2">
         <div class="row">
           <div class="col-xs-12 prod">
@@ -33,11 +35,13 @@
           </div>
         </div>
       </div><!-- /.rightcol-level 1 -->
+      <% end %>
+      
     </div><!-- /.row -->
     <hr>
   </div><!-- /.container-fluid -->
 </section>
-<% end %>
+
 
 <% if @product_slide_groups.present? %>
   <section>
