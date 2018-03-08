@@ -1,6 +1,10 @@
+
+
 <div class="container">
 
   <div class="row">
+    
+    <% cache @product do %> 
 
     <div class="col-sm-6">
       <% if @product.product_image.present? %>
@@ -41,7 +45,8 @@
         <%= @product.categorie.name %> 
       </p> 
       <% end %>
-
+      
+      <% end %>
       
 
       <% if current_user.present? %>
@@ -95,6 +100,7 @@
       </div>
     </div>
   </div>
+  
   
   <%= render 'new_comment' %>
 

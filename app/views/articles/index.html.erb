@@ -4,34 +4,11 @@
   <h1>Articles</h1>
 
   <div class="row">
-  
+    <% cache(cache_key_for_articles) do %>
     <% @articles.each do |article| %>
-      <div class= "col-sm-3">
-        <%= link_to (image_tag(article.image_url)), article_path(article) %>
-        <header>
-          <h5><%= article.title %></h5>
-        </header>
-        
-        <% if signed_in? && current_user.admin? %>
-          <div class="btn-group">  
-            <%= link_to article, class: 'btn btn-default btn-xs' do %>
-              <i class="glyphicon glyphicon-eye-open"></i>
-            <% end %>
-
-            <%= link_to edit_article_path(article), class: 'btn btn-default btn-xs' do %>
-              <i class="glyphicon glyphicon-pencil"></i>
-            <% end %>
-
-            <%= link_to article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default btn-xs' do %>
-              <i class="glyphicon glyphicon-remove"></i>
-            <% end %>
-          </div>
-        <% end %>
-
-
-      </div>
+      <%= render partial: "shared/article", locals: {article: article} %>
     <% end %>
-  
+    <% end %>
   </div>
 
   <% if signed_in? && current_user.admin? %>
