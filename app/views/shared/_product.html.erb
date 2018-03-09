@@ -1,6 +1,6 @@
 
 <div class= "col-sm-3 prod prod-gallery">
-  <% cache product do %>
+
     <%= link_to product_path(product) do %> 
       <% if product.product_image? %>
         <%= image_tag (product.product_image.url) %>
@@ -10,8 +10,8 @@
         <h5><%= product.name %></h5>
       </header>
     <% end %>
-  <% end %>
-  
+
+
   <% if signed_in? && current_user.admin? %>
     <div class="btn-group">  
       <%= link_to product, class: 'btn btn-default btn-xs' do %>
