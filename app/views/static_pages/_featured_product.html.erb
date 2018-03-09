@@ -1,4 +1,4 @@
-<% cache featured_product do %>
+
 <%= link_to product_path(featured_product.id) do %>
   <header> 
     <h5>
@@ -10,5 +10,4 @@
   <% if featured_product.product_image.present? %>  
     <%= image_tag(featured_product.product_image.url) %> 
   <% end %> 
-<% end %> 
 <% end %> 

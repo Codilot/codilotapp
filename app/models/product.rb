@@ -10,6 +10,12 @@ class Product < ApplicationRecord
   validates :description, presence: true, length: { minimum: 200 }
   validates :price, presence: true
 
+  #image uploading
+  mount_uploader :product_image, ProductImageUploader
+
+  validates_processing_of :product_image
+  validate :image_size_validation
+
 
   def create_categorie_from_name
     create_categorie(name: new_categorie_name) unless new_categorie_name.blank?
@@ -35,11 +41,16 @@ class Product < ApplicationRecord
     comments.average(:rating).to_f
   end
   
-  #image uploading
-  mount_uploader :product_image, ProductImageUploader
+  #redis
+  def views
+    $redis.get("product:#{id}") #'GET product:1'
+  end
 
-  validates_processing_of :product_image
-  validate :image_size_validation
+  def viewed!
+    $redis.incr("product:#{id}") #'INCR product:1'
+  end
+  
+
  
   private
     def image_size_validation

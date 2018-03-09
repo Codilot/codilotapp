@@ -47,6 +47,7 @@ gem 'stripe'
 gem 'brakeman', '~> 3.4'
 gem 'dalli'
 gem 'memcachier'
+gem 'redis-rails'
 
 
 

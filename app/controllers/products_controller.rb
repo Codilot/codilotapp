@@ -18,6 +18,7 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @comments = @product.comments.order("created_at DESC").page(params[:page]).per_page(6)
+    @product.viewed!
   end
 
   # GET /products/new
