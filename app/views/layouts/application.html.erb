@@ -38,7 +38,7 @@
             <li><%= link_to 'Lighting', static_pages_lighting_path %></li>
             <li><%= link_to 'All', products_path %></li>
             <li><%= link_to 'Trendscout', articles_path %></li>
-            <li><%= link_to 'contact', static_pages_contact_path %></li>
+            
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <%= render 'devise/menu/user_nav' %>
@@ -73,7 +73,7 @@
       
           <div class="col-sm-6">           
               <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
-              <div class="searchform input-group">
+              <div class="searchform input-group row">
                 <%= form.text_field :q, id: 'q', class: "form-control", value: params[:q], placeholder: "Search for..."  %>
                 <span class="input-group-btn">
                   <%= form.submit 'Go', class: "btn btn-default" %>
@@ -81,20 +81,27 @@
               </div><!-- /input-group -->
               <% end %>
           </div><!-- /.col-sm-6 -->
+
+
+          <div class="col-sm-12">
+            <hr>
+          </div>
         </div><!-- /.row -->
-        <hr>
-        <section class="footer-accordion">
+
+        <div class="footer-accordion">
           <!-- accordion -->
-          <a class="footer-nav-link text-center" role="button" data-toggle="collapse" href="#footernav" aria-expanded="false" aria-controls="footernav">
-            <h4>About us &amp; our Services <span class="caret"></span></h4>
-          </a>
+          <div class="col-sm-12">
+            <a class="footer-nav-link text-center" role="button" data-toggle="collapse" href="#footernav" aria-expanded="false" aria-controls="footernav">
+              <h4>About us &amp; our Services <span class="caret"></span></h4>
+            </a>
+          </div>
           <div class="collapse text text-center" id="footernav">
             <div class="row">
               <div class="col-sm-3">
                 <h5>About</h5>
                 <ul>
                   <li><%= link_to 'Our Story', static_pages_about_path %></li>
-                  <li><%= link_to 'Visit us', static_pages_contact_path %></li>
+                  <li><%= link_to 'Contact', static_pages_contact_path %></li>
                   <li><a href="#">Terms &amp; conditions</a></li>
                 </ul>
               </div>
@@ -122,7 +129,7 @@
             </div>
 
           </div><!-- /.footernav -->
-        </section>
+        </div>
       </div>
     </footer>
 

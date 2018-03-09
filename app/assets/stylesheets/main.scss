@@ -161,8 +161,7 @@ a:hover {
   }
 
 .searchform {
-  margin-top: 20px;
-  width: 100%;
+  margin: 20px 0 0 0;
 }
 
 @media (max-width: 576px) {  
@@ -182,8 +181,6 @@ a:hover {
 }
 
 
-
-
 .footer-accordion ul {
   list-style-type: none;
   padding-left: 0;
@@ -192,13 +189,14 @@ a:hover {
 
 
 .footer-baseline {
-  margin: 10px auto;  
+  margin-bottom: 10px;  
 }
 
 .copyright-text {
   text-align: center;
   font-size: 0.8em;
   color: $primary-color;
+  margin-top: 20px;
 }
 
 
