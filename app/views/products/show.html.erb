@@ -1,10 +1,7 @@
-
-
 <div class="container">
 
   <div class="row">
     
-    <% cache @product do %> 
 
     <div class="col-sm-6">
       <% if @product.product_image.present? %>
@@ -44,8 +41,6 @@
         <strong>Categorie:</strong> 
         <%= @product.categorie.name %> 
       </p> 
-      <% end %>
-      
       <% end %>
       
 
