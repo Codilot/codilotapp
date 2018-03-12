@@ -3,7 +3,7 @@
 
     <%= link_to product_path(product) do %> 
       <% if product.product_image? %>
-        <%= image_tag (product.product_image.url) %>
+        <%= image_tag (product.product_image.url(:medium)) %>
       <% end %>  
       
       <header>

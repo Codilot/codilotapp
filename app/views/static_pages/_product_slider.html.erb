@@ -4,7 +4,7 @@
     <div class="col-xs-4 prod">
       <%= link_to product_path(product) do %>
         <% if product.product_image? %>
-          <%= image_tag(product.product_image.url) %>
+          <%= image_tag(product.product_image.url(:medium)) %>
         <% end %>  
         <div class="carousel-caption">
           <h5><%= product.name %></h5>
