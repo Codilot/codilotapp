@@ -107,4 +107,9 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  
+  # Allow websockets actioncable
+  config.web_socket_server_url = "wss://moebi.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://moebi.herokuapp.com', 'http://moebi.herokuapp.com']
+
 end

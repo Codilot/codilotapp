@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  
-
 
   devise_for :users, controllers: { registrations: 'registrations' }, skip: [:sessions]
   devise_scope :user do
@@ -32,6 +30,8 @@ Rails.application.routes.draw do
   
   post 'payments/create' 
   get  'payments/purchase'  
+
+  mount ActionCable.server => '/cable'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

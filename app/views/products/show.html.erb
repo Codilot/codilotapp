@@ -68,6 +68,7 @@
     <% if @product.highest_rating_comment.present? || @product.lowest_rating_comment.present? %>
       <div class="col-sm-12">
         <hr>
+        <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
         <h5><strong>Rating</strong></h5>
       </div>
       <div class="col-sm-6">
@@ -106,13 +107,14 @@
   </div>
   
   <div class="row">
-    <%= render 'new_comment' %>
+    <div class="col-sm-12">
+      <%= render 'new_comment' %>
+    </div>
     <div class="col-sm-12">
       <a role="button" data-toggle="collapse" href="#collapseComments" aria-expanded="false" aria-controls="collapseExample">
-        Show more comments
+        Show more reviews
       </a>
-    </div>
-
+    </div> 
     <div class="collapse col-sm-12" id="collapseComments">
       <%= render 'comments' %>
     </div>
