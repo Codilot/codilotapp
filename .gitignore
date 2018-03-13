@@ -28,3 +28,4 @@
 /config/application.yml
 /config/secrets.yml
 /config/newrelic.yml
+/config/cable.yml
