@@ -80,3 +80,25 @@ img {
   margin-top: 10px;
   background-color: $shade-color;
 }
+
+
+
+.show-more-link {
+  font-size: .8em;
+  color: $text-color; 
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 35px;
+  margin-bottom: 15px;
+}
+
+.show-more-link:hover {
+  text-decoration: none;
+}
+
+.show-more-link:active,
+.show-more-link:focus {
+ text-decoration: none;
+ color: $secondary-color; 
+}
+
