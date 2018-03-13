@@ -6,7 +6,7 @@ test:
 
 production:
   adapter: postgresql
-  url: postgres://nrakdemmshsxwi:681d95937ff4684b52f1d175797c6b30f54f65de95c635ab83b9f67ea896cfee@ec2-54-225-88-191.compute-1.amazonaws.com:5432/d606deipv4086j
+  url: ENV['DATABASE_URL']
   #adapter: redis
   #url: redis://localhost:6379/1
   #channel_prefix: moebi_production
