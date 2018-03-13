@@ -9,4 +9,4 @@ production:
   url: ENV['DATABASE_URL']
   #adapter: redis
   #url: redis://localhost:6379/1
-  channel_prefix: moebi_production
+  #channel_prefix: moebi_production
