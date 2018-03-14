@@ -7,7 +7,7 @@
 
   <div class="row">
     <% if @living_products.present? %>
-	    <% @living_products_paginated.each do |product| %>
+	    <% @living_products.each do |product| %>
 	      <%= render partial: "shared/product", locals: {product: product} %>
 	    <% end %>
     <% end %>

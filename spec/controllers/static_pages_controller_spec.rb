@@ -3,7 +3,7 @@ require 'rails_helper'
 
 
 describe StaticPagesController, type: :controller do 
-
+   
   
     get_actions = [[:landing_page, 'landing_page'], 
                    [:about, 'about'],

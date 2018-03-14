@@ -9,7 +9,7 @@ describe CommentsController, type: :controller do
 
 # ===================================
 
-  describe 'POST #create:' do
+  describe 'POST #create' do
 
     context "is created succesfully by a loggedin user" do
       before do 
