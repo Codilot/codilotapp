@@ -9,7 +9,7 @@ class StaticPagesController < ApplicationController
   def living
     #@living_products = Categorie.find_by(name: "Living").products
     @living = Categorie.find_by(name: "Living")
-    if @living.present?
+    if @living.present? && @living.products.present?
       @living_products = @living.products.page(params[:page]).per_page(8)
     else
       @category_notice = "This category doesn\'t seem to have any products at the moment, please check back at a later date."
@@ -18,7 +18,7 @@ class StaticPagesController < ApplicationController
 
   def lighting
     @lighting = Categorie.find_by(name: "Lighting")
-    if @lighting.present?
+    if @lighting.present? && @lighting.products.present?
       @lighting_products = @lighting.products.page(params[:page]).per_page(8)
     else
       @category_notice = "This category doesn\'t seem to have any products at the moment, please check back at a later date."
@@ -27,7 +27,7 @@ class StaticPagesController < ApplicationController
 
   def dining
    @dining = Categorie.find_by(name: "Dining")
-    if @dining.present?
+    if @dining.present? && @dining.products.present?
       @dining_products = @dining.products.page(params[:page]).per_page(8)
     else
       @category_notice = "This category doesn\'t seem to have any products at the moment, please check back at a later date."
