@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :users, :articles
   resources :products do
-    resources :comments
+    resources :comments, only: [:create, :destroy]
   end
   resources :orders, only: [:index, :show, :create, :destroy]
   
