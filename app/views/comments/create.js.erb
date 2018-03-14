@@ -1,6 +1,6 @@
 var reviewSent = $("<div/>", {
   html: "Thank you for your review!",
-  "class": "col-sm-12",
+  "class": "col-sm-12 review-sent",
 })
 
 $("#new_comment").fadeOut(400, function() {
@@ -9,7 +9,7 @@ $("#new_comment").fadeOut(400, function() {
 
 $("#average-rating").attr('data-score', "<%= @product.average_rating %>");
 
-$(".product-reviews").prepend("<%= j render @comment %>");
+// $(".product-reviews").prepend("<%= j render @comment %>");
 
 
 refreshRating();

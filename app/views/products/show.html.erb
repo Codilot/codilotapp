@@ -1,7 +1,7 @@
 
 <div class="container">
 
-  <div class="row">
+  <div class="row" data-product-id="<%= @product.id %>">
     
     <div class="col-sm-6">
       <% if @product.product_image.present? %>
@@ -68,7 +68,9 @@
     <% if @product.highest_rating_comment.present? || @product.lowest_rating_comment.present? %>
       <div class="col-sm-12">
         <hr>
-        <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
+        <div class="alert alert-info" style="display:none" role="alert">
+          A new comment was posted!
+        </div>
         <h5><strong>Rating</strong></h5>
       </div>
       <div class="col-sm-6">
@@ -112,7 +114,8 @@
     </div>
     <div class="col-sm-12">
       <a class="show-more-link" role="button" data-toggle="collapse" href="#collapseComments" aria-expanded="false" aria-controls="collapseExample">
-        Show more reviews
+        More reviews
+        <span class="glyphicon glyphicon-triangle-bottom"></span>
       </a>
     </div> 
     <div class="collapse col-sm-12" id="collapseComments">
