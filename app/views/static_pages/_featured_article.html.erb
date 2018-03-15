@@ -6,7 +6,7 @@
         <h2 class="main-article-subline"><%=featured_article.subline %></h2>
       <% end %>
     </header>
-    <% if featured_article.image_url.present? %> 
+    <% if featured_article.article_image.url.present? %> 
        <%= image_tag(featured_article.article_image.url(:landing_page_thumb), class: "img-responsive") %> 
     <% end %>
   <% end %> 
