@@ -26,15 +26,30 @@ describe ProductsController, type: :controller do
     end
   end  
 
-
-  context 'POST #create' do
-    before do 
-      sign_in admin   
+  describe 'POST #create' do
+    context "is created succesfully by a admin" do
+      before do 
+        sign_in admin   
+      end
+      it "creates new product" do 
+        expect{
+          post :create, params: { product: FactoryBot.attributes_for(:product) }
+          }.to change(Product,:count).by(1)
+      end
     end
-    it "creates new product" do 
-      expect{
-        post :create, params: { product: FactoryBot.attributes_for(:product) }
-        }.to change(Product,:count).by(1)
+    context "product data is invalid" do
+      before do 
+        sign_in admin
+      end
+      it "does not create new product" do 
+        expect{
+          post :create, params: { product: FactoryBot.attributes_for(:product, teaser: nil) }
+          }.to change(Product,:count).by(0)
+      end
+      it "renders the new template" do
+        post :create, params: { product: FactoryBot.attributes_for(:product, teaser: nil) } 
+        expect(response).to render_template('new')
+      end
     end
   end
 
