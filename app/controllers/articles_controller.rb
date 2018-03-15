@@ -2,8 +2,6 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
-  skip_authorize_resource :only => [:show, :index]
-  
 
   # GET /articles
   # GET /articles.json

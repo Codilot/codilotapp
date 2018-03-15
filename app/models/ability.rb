@@ -28,17 +28,25 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
+    
+    alias_action  :read, to: :product_allowed_actions
+    alias_action  :read, to: :article_allowed_actions
+    alias_action  :create, :read, :show, to: :comment_allowed_actions
+    alias_action  :create, :read, :show, :update, :destroy, to: :order_allowed_actions
 
     user ||= User.new # guest user (not logged in)
-    if user.present?  # additional permissions for logged in users (they can manage their posts)
+    if user.present?  # permissions for logged in users
       can :manage, User, id: user.id
-      can :create, Comment
+      can :product_allowed_actions, Product
+      can :product_allowed_actions, Article
+      can :comment_allowed_actions, Comment
+      can :order_allowed_actions, Order, user_id: user.id
       if user.admin?  # additional permissions for administrators
         can :manage, :all
       end
-    else
-      can :read, :all
+    else # guest user permissions
+      can :product_allowed_actions, Product
+      can :product_allowed_actions, Article
     end
-
   end
 end
