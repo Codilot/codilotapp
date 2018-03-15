@@ -3,20 +3,20 @@
   <div class="container">
     <div class="row prod-inner">
 
-      <div class="col-sm-6 prod">
+      <div class="col-sm-6 main-content">
         <%= render partial: "featured_article", locals: {featured_article: @featured_article} if @featured_article %>
       </div><!-- /.leftcol level 1-->
 
   
       <div class="col-sm-2">
         <div class="row">
-          <div class="col-xs-12 prod">
+          <div class="col-xs-12 main-content">
             <%= render partial: "featured_product", locals: {featured_product: @featured_product[0]} if @featured_product[0] %>     
           </div>
-          <div class="col-xs-12 prod">
+          <div class="col-xs-12 main-content">
             <%= render partial: "featured_product", locals: {featured_product: @featured_product[1]} if @featured_product[1] %>  
           </div>
-          <div class="col-xs-12 prod">
+          <div class="col-xs-12 main-content">
             <%= render partial: "featured_product", locals: {featured_product: @featured_product[2]} if @featured_product[2] %> 
           </div><!-- /.col  -->
         </div><!-- /.row  -->
@@ -24,13 +24,13 @@
 
       <div class="col-sm-4">
         <div class="row">
-          <div class="col-xs-6 prod">
+          <div class="col-xs-6 main-content">
             <%= render partial: "featured_product", locals: {featured_product: @featured_product[3]} if @featured_product[3] %> 
           </div>
-          <div class="col-xs-6 prod">
+          <div class="col-xs-6 main-content">
             <%= render partial: "featured_product", locals: {featured_product: @featured_product[4]} if @featured_product[4] %>     
           </div>
-          <div class="col-xs-12 prod">
+          <div class="col-xs-12 main-content">
             <%= render partial: "featured_product", locals: {featured_product: @featured_product[5]} if @featured_product[5] %>   
           </div>
         </div>
@@ -46,6 +46,7 @@
 <% if @product_slide_groups.present? %>
   <section>
     <div class="container">
+      <h3 class="text-center">Browse through our products</h3>
       <div id="carousel-landing-page" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -73,10 +74,11 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-      <hr>
     </div>  <!-- End Container -->
   </section>
 <% end %>
+
+<%= render partial: "shared/latest_articles" %>
 
 
 

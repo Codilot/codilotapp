@@ -1,0 +1,11 @@
+<div class="container text-center latest_products">
+  <hr>
+  <h3>Have a look at our latest products</h3>
+  <div class="row">
+    <% if @latest_products.present? %>
+      <% @latest_products.each do |product| %>
+        <%= render partial: "shared/product", locals: {product: product} %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

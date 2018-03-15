@@ -5,7 +5,7 @@
     
     <div class="col-sm-6">
       <% if @product.product_image.present? %>
-      <%= image_tag @product.product_image.url, class: "img_zoom img-responsive", data_zoom_image: "@product.product_image.url" %>
+      <%= image_tag @product.product_image.url.to_s, class: "img_zoom img-responsive", data_zoom_image: "@product.product_image.url" %>
       <% end %>
     </div>
     <div class="col-sm-6">

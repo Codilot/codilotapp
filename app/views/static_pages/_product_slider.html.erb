@@ -1,7 +1,7 @@
 <div class="item<%= " active" if group == @product_slide_groups.first %>">
   <% group.each do |product| %>
 
-    <div class="col-xs-4 prod">
+    <div class="col-xs-4 main-content">
       <%= link_to product_path(product) do %>
         <% if product.product_image? %>
           <%= image_tag(product.product_image.url(:medium)) %>

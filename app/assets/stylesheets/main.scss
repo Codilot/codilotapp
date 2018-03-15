@@ -30,18 +30,6 @@ h4, h5 {
 
 
 
-.subline {
-  font-weight: 400;
-  font-size: 1.8em;
-}
-
-.prod-subline {
-  font-family: $font-stack;
-  font-weight: 300;
-  font-size: 1em;
-  text-transform: lowercase;
-}
-
 a,
 a:active,
 a:focus,
@@ -200,23 +188,21 @@ a:hover {
 }
 
 
-//Page styling
-//Landing_page
-
-.prod {
+//Main Content styles
+.main-content {
   position: relative;
 }
 
-  .prod header {
+  .main-content header {
       position: absolute;
       top: 20px;
       max-width: 60%;
     }
 
-  .prod h1,
-  .prod h2,
-  .prod h5,
-  .prod h6 {    
+  .main-content h1,
+  .main-content h2,
+  .main-content h5,
+  .main-content h6 {    
     padding: 5px;
     background-color: rgba(255,255,255, .9);
     margin-left:-15px;
@@ -224,31 +210,50 @@ a:hover {
     text-shadow: none;
   }
 
-  .prod h5 {
+  .main-content h5 {
     font-weight: 900;
   }  
 
-  .prod a:hover img {
+  .main-content a:hover img {
     opacity: .5;
   }
   
-  .prod:hover header {
+  .main-content:hover header {
     z-index: 2;
   }
 
-  .prod:hover h1,
-  .prod:hover h2,
-  .prod:hover h5,
-  .prod:hover h6 {
+  .main-content:hover h1,
+  .main-content:hover h2,
+  .main-content:hover h5,
+  .main-content:hover h6 {
     background-color: $shade-color;
     color: $primary-color;
   }
 
-  .prod img {
+  .main-content img {
     padding-top: 15px;
     padding-bottom: 15px;
     margin: auto;
   }
+
+  .main-content-subline {
+  font-family: $font-stack;
+  font-weight: 300;
+  font-size: 1em;
+  text-transform: lowercase;
+  }
+
+  .main-content-gallery {
+    margin-bottom: 15px;
+  }
+
+  .main-article-subline {
+    font-weight: 400;
+    font-size: 1.8em;
+  }
+
+
+  
 
 
 //Carousel
@@ -403,7 +408,7 @@ h3.form-heading  {
   margin: 20px auto;
 }
 
-.latest_products .row {
+.latest_main-contentucts .row {
   margin: auto;
 }
 

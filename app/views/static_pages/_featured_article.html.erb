@@ -2,10 +2,12 @@
   <%= link_to article_path(featured_article.id) do %> 
     <header> 
       <h1><%= featured_article.title %></h1>
-      <h2 class="subline"><%=featured_article.description %></h2>
+      <% if featured_article.subline.present? %>
+        <h2 class="main-article-subline"><%=featured_article.subline %></h2>
+      <% end %>
     </header>
     <% if featured_article.image_url.present? %> 
-      <%= image_tag(featured_article.image_url, class: "img-responsive") %>
+       <%= image_tag(featured_article.article_image.url(:landing_page_thumb), class: "img-responsive") %> 
     <% end %>
   <% end %> 
 <% end %> 
@@ -14,3 +16,4 @@
  
 
 
+ 

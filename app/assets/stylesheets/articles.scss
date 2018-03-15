@@ -1,5 +1,77 @@
+// Font Variables
+$font-stack: 'Muli', sans-serif; 
+
+//Colors
+$primary-color: rgba(255, 255, 255, 1);
+$secondary-color: rgba(175, 171, 165, 1);
+$shade-color: rgba(114, 158, 161, 1);
+$text-color: rgba(87,85,82, 1);
+$highlight-color: rgba(246, 254, 219, 1);
+$emphasis-color: rgba(172, 215, 236, 1);
+
 
 //Form
 .field {
   margin: 20px auto;
 }  
+
+.main-article {
+  position: relative;
+}
+
+  .main-article header {
+      position: absolute;
+      top: 20px;
+      max-width: 60%;
+      z-index: 2;
+    }
+  
+  .main-article h1,
+  .main-article h2 {    
+    padding: 5px;
+    background-color: rgba(255,255,255, .9);
+    margin-left:-15px;
+    color: $shade-color;
+    text-shadow: none;
+  }
+
+  .main-article h1 {
+  	font-size: 4em;
+  }
+    @media (max-width: 576px) {  
+      .main-article h1 {
+      font-size: 2.2em;
+      margin-bottom: 8px;
+      }
+    }
+
+  .main-article h2 {
+  	font-family: $font-stack;
+    font-weight: 400;
+    font-size: 2.2em;
+    text-transform: lowercase;
+  }
+    @media (max-width: 576px) {  
+      .main-article h2 {
+      font-size: 1.2em;
+      }
+    }
+
+.teaser-article {
+  background-color: $shade-color;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+  .teaser-article i {
+  	font-weight: 400;
+    font-size: 1.3em;
+    color: $primary-color;
+  }
+
+  @media (max-width: 576px) {  
+      .teaser-article i {
+      font-size: 1em;
+      }
+    }

@@ -4,6 +4,7 @@ class StaticPagesController < ApplicationController
     @featured_product = Product.all.sort_by { |e| e.id }.reverse[0..5]
     @product_slide_groups = Product.all.each_slice(3).to_a
     @featured_article = Article.last
+    @latest_articles = Article.last(4)
   end
 
   def living

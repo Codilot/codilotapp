@@ -1,44 +1,43 @@
 <div class="container">
-  <p id="notice"><%= notice %></p>
   <div class="row">
-    <div class="col-sm-6">
-      <%= image_tag(@article.image_url) %>
-    </div>
 
-    <div class="col-sm-6">
-      <p>
-        <strong>Title:</strong>
-        <%= @article.title %>
-      </p>
+    <section class="main-article">
+      <div class="col-sm-12">
+        <%= image_tag(@article.article_image.article_thumb.url.to_s) %>
+        <header> 
+          <h1><%= @article.title %></h1>
+          <h2><%= @article.subline %></h2>
+        </header> 
+      </div>
 
-      <p>
-        <strong>Description:</strong>
-        <%= @article.description %>
-      </p>
+      <div class="col-sm-12 teaser-article">
+        <i><%= @article.teaser %></i>
+      </div>
+    </section>
 
+    <div class="col-sm-12">
       <p>
-        <strong>Image url:</strong>
-        <%= @article.image_url %>
+        <%= @article.body %>
       </p>
     </div>
   </div>
 
   <div class="btn-control-group">
-  <%= link_to articles_path, class: 'btn btn-default' do %>
+    <%= link_to articles_path, class: 'btn btn-default' do %>
     <i class="glyphicon glyphicon-arrow-left"></i> Back
-  <% end %>
+    <% end %>
 
-  <% if signed_in? && current_user.admin? %>
-  
+    <% if signed_in? && current_user.admin? %>
+
     <%= link_to edit_article_path(@article), class: 'btn btn-default' do %>
-      <i class="glyphicon glyphicon-pencil"></i> Edit
+    <i class="glyphicon glyphicon-pencil"></i> Edit
     <% end %>
 
     <%= link_to @article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' do %>
-      <i class="glyphicon glyphicon-remove"></i> Destroy
+    <i class="glyphicon glyphicon-remove"></i> Destroy
     <% end %> 
 
-  <% end %> 
-</div> 
-
+    <% end %> 
+  </div> 
 </div>
+<%= render partial: "shared/latest_products" %>

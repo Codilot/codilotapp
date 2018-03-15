@@ -13,26 +13,57 @@
 
   <div class="row">
 
-  <div class="form-group col-sm-6">
-    <%= form.label :title, class: "col-sm-3 control-label" %>
-    <div class="col-sm-9">
-      <%= form.text_field :title, id: :article_title, class: "form-control" %>
+    <div class="form-group col-sm-12">
+      <%= form.label :title, class: "col-sm-3 control-label" %>
+      <div class="col-sm-9">
+        <%= form.text_field :title, id: :article_title, class: "form-control" %>
+      </div>
     </div>
-  </div>
+    <div class="form-group col-sm-12">
+      <%= form.label :subline, class: "col-sm-3 control-label" %>
+      <div class="col-sm-9">
+        <%= form.text_field :subline, id: :article_subline, class: "form-control" %>
+      </div>
+    </div>
 
-  <div class="form-group col-sm-6">
-    <%= form.label :image_url, class: "col-sm-3 control-label" %>
-    <div class="col-sm-9">
-      <%= form.text_field :image_url, id: :article_image_url, class: "form-control" %>
+    <div class="form-group col-sm-12">
+      <%= form.label :article_image, "Add your image...", class: "col-sm-3 control-label" %>
+      <div class="col-sm-9">
+        <%= form.file_field :article_image, id: :article_image %>
+      </div> 
     </div>
-  </div>
 
-  <div class="form-group col-sm-6">
-    <%= form.label :description, class: "col-sm-3 control-label" %>
-    <div class="col-sm-9">
-      <%= form.text_area :description, id: :article_description, class: "form-control", rows:"10" %>
+    <% if form.object.article_image? %>
+    <div class="form-group col-sm-12" >
+      <%= image_tag(article.article_image.landing_page_thumb.url, class: "col-sm-3 form-image") %>
+      <div class="form-check col-xs-12">
+        <%= form.check_box :remove_article_image %>
+        <%= form.label :remove_article_image, class: "form-check-label" %>
+      </div>
+    </div>   
+    <% end %>
+
+    <div class="form-group col-sm-12">
+      <%= form.label :image_url, class: "col-sm-3 control-label" %>
+      <div class="col-sm-9">
+        <%= form.text_field :image_url, id: :article_image_url, class: "form-control" %>
+      </div>
     </div>
-  </div>
+
+    <div class="form-group col-sm-12">
+      <%= form.label :teaser, "Teaser", class: "col-sm-12 control-label" %>
+      <div class="col-sm-12">
+        <%= form.text_area :teaser, id: :teaser, class: "form-control", rows:"5" %>
+      </div>
+    </div>
+
+    <div class="form-group col-sm-12">
+      <%= form.label :body, "Main body text", class: "col-sm-12 control-label" %>
+      <div class="col-sm-12">
+        <%= form.text_area :body, id: :article_body, class: "form-control", rows:"15" %>
+      </div>
+    </div>
+
   </div><!-- end of row -->
 
 

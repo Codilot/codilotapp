@@ -3,9 +3,13 @@
   <header> 
     <h5>
       <%= featured_product.name %> 
-      <span class="prod-subline"><%= featured_product.teaser %></span>
-      <span class="prod-subline"><%= featured_product.price %></span>
+      <span class="main-content-subline"><%= featured_product.teaser %></span> <br>
+      <span class="main-content-subline">  
+        <span class="glyphicon glyphicon-euro main-content-subline"></span> 
+        <%= featured_product.price %>
+      </span>
     </h5>
+    <p></p>
   </header>  
   <% if featured_product.product_image.present? %>  
     <%= image_tag(featured_product.product_image.url) %> 
