@@ -35,7 +35,7 @@ class Ability
     alias_action  :create, :read, :show, :update, :destroy, to: :order_allowed_actions
 
     user ||= User.new # guest user (not logged in)
-    if user.present?  # permissions for logged in users
+    if user.present?  # permissions logged in users
       can :manage, User, id: user.id
       can :product_allowed_actions, Product
       can :product_allowed_actions, Article
