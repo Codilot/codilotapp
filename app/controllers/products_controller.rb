@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
     if params[:q]
       search_term = params[:q]
       @products = Product.search(search_term)
+      @search_notice = "Your search of \"#{search_term}\" matches #{@products.count} of our products." 
     else
       @products = Product.all.page(params[:page]).per_page(8)
     end

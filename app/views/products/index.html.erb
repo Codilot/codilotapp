@@ -1,9 +1,9 @@
 <div class="container">
 
-  <p id="notice"><%= notice %></p>
+  
 
   <h1>Products</h1>
-
+  <p id="search_notice"><%= @search_notice %></p>
 
   <div class="row prod-inner">
     <% cache(cache_key_for_products) do %>
