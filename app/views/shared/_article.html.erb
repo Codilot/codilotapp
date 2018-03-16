@@ -4,7 +4,10 @@
     <%= link_to (image_tag(article.article_image.landing_page_thumb.url)), article_path(article) %>
   <% end %>
   <header>
-    <h5><%= article.title %></h5>
+    <h5 class="main-content-headline"><%= article.title %></h5>
+      <% if article.subline.present? %>
+        <h6 class="main-content-subline"> <%= article.subline %></h6>
+      <% end %>
   </header>
 
   <% if signed_in? && current_user.admin? %>

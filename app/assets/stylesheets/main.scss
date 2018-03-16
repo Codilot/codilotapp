@@ -235,19 +235,25 @@ a:hover {
     padding-bottom: 15px;
     margin: auto;
   }
+  
+  .main-content-headline {
+    font-size: 1.8em;
+    text-transform: none;
+  }
 
   .main-content-subline {
   font-family: $font-stack;
   font-weight: 300;
   font-size: 1em;
-  text-transform: lowercase;
+  text-transform: none;
   }
+
 
   .main-content-gallery {
     margin-bottom: 15px;
   }
 
-  .main-article-subline {
+  .featured-article-subline {
     font-weight: 400;
     font-size: 1.8em;
   }
@@ -258,7 +264,17 @@ a:hover {
 
 //Carousel
 #carousel-landing-page {
-margin: 30px auto;
+  margin: 30px auto;
+}
+
+@media (max-width: 576px) {  
+  #carousel-landing-page .item-inner {
+    padding: 2px;
+  }
+} 
+
+.carousel-caption h5 {
+  margin-left: 0px;
 }
 
 .carousel-inner {
@@ -276,6 +292,7 @@ margin: 30px auto;
 .carousel-control.left {
   background-image: none;
 }  
+
 
 
 
