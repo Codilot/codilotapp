@@ -16,8 +16,11 @@
       <li><%= link_to('Your orders',  orders_path) %></li>
     </ul>
   </li> 
-  <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
-  <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+  <li>
+    <%= link_to orders_path do %>
+      <i class="glyphicon glyphicon-shopping-cart"></i>
+    <% end %>
+  </li>
 <% else%>
   <li>
     <%= link_to new_user_session_path do %>
