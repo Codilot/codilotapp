@@ -7,8 +7,7 @@ class OrdersController < ApplicationController
     if current_user.admin?
       @orders = Order.includes(:product).all
     else
-      @user = current_user
-      @my_orders = @user.orders
+      @orders = Order.includes(:product, :user).where(user_id: current_user.id)
     end  
   end
 

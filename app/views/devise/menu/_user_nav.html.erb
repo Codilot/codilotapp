@@ -11,8 +11,9 @@
         <span>Logout</span>
         <% end %>
       </li>
-      <li><%= link_to('Edit registration', edit_user_registration_path) %></li>
-      <li><a href="#">My Orders</a></li>
+      <li><%= link_to('Your account', edit_user_path(current_user)) %></li>
+      <li><%= link_to('Change login', edit_user_registration_path) %></li>
+      <li><%= link_to('Your orders',  orders_path) %></li>
     </ul>
   </li> 
   <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>

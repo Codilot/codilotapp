@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
   attr_accessor :new_categorie_name 
   has_many :orders
-  has_many :comments
+  has_many :comments, :dependent => :destroy
   belongs_to :categorie, required: false
   before_save :create_categorie_from_name
   validates :name, presence: true

@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
    
   has_many :orders
-  has_many :comments
+  has_many :comments, :dependent => :destroy
   
   def name
     [first_name, last_name].join(' ')

@@ -1,8 +1,13 @@
-<div class="container">	
-	<h1>Editing User</h1>
+<div class="container form-authentication form-small">
+   <div class="row form-authentication-inner"> 
+    <div class="col-sm-12 text-center">
+      <div class="circle">
+        <span class="glyphicon glyphicon-user"></span>
+      </div>
+      <h2>Your account</h2>
+    </div>
 
-	<%= render 'form', user: @user %>
-
-	<%= link_to 'Show', @user %> |
-	<%= link_to 'Back', users_path %>
+      <%= render 'form', user: @user %>
+ 
+  </div>
 </div>
