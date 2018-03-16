@@ -5,7 +5,7 @@ class StaticPagesController < ApplicationController
     @featured_product = Product.last(6)
     @product_slide_groups = Product.all.each_slice(3).to_a
     @featured_article = Article.last
-    @latest_articles = Article.last(4)
+    @latest_articles = Article.last(5).take(4)
   end
 
   def living
