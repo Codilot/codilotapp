@@ -4,7 +4,12 @@ class OrdersController < ApplicationController
   load_and_authorize_resource
   
   def index
-    @orders = Order.includes(:product).all
+    if current_user.admin?
+      @orders = Order.includes(:product).all
+    else
+      @user = current_user
+      @my_orders = @user.orders
+    end  
   end
 
   def show

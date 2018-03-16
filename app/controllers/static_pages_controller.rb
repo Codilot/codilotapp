@@ -1,7 +1,8 @@
 class StaticPagesController < ApplicationController
   
   def landing_page
-    @featured_product = Product.all.sort_by { |e| e.id }.reverse[0..5]
+    #@featured_product = Product.all.sort_by { |e| e.id }.reverse[0..5]
+    @featured_product = Product.last(6)
     @product_slide_groups = Product.all.each_slice(3).to_a
     @featured_article = Article.last
     @latest_articles = Article.last(4)

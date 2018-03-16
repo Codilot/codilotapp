@@ -1,7 +1,7 @@
 <% cache article do %>
 <div class= "col-sm-3 main-content main-content-gallery">
   <% if article.article_image? %> 
-    <%= link_to (image_tag(article.article_image.landing_page_thumb.url)), article_path(article) %>
+    <%= link_to (image_tag(article.article_image.url(:landing_page_thumb))), article_path(article) %>
   <% end %>
   <header>
     <h5 class="main-content-headline"><%= article.title %></h5>

@@ -25,7 +25,8 @@ class ProductImageUploader < CarrierWave::Uploader::Base
 
   # Process files as they are uploaded:
   # process scale: [200, 300]
-    process resize_to_fit: [800, 800]
+  # process resize_to_fit: [800, 800]
+    process resize_and_crop: 800
   #
   # def scale(width, height)
   #   # do something
@@ -56,5 +57,21 @@ class ProductImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+
+private
+  # Resize and crop square from Center
+  def resize_and_crop(size)  
+    manipulate! do |image|                 
+      if image[:width] < image[:height]
+        remove = ((image[:height] - image[:width])/2).round 
+        image.shave("0x#{remove}") 
+      elsif image[:width] > image[:height] 
+        remove = ((image[:width] - image[:height])/2).round
+        image.shave("#{remove}x0")
+      end
+      image.resize("#{size}x#{size}")
+      image
+    end
+  end
 
 end
