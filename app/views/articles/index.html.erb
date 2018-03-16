@@ -1,13 +1,12 @@
 <div class="container">
-  <p id="notice"><%= notice %></p>
 
   <h1>Articles</h1>
 
   <div class="row">
     <% cache(cache_key_for_articles) do %>
-    <% @articles.each do |article| %>
-      <%= render partial: "shared/article", locals: {article: article} %>
-    <% end %>
+      <% @articles.each do |article| %>
+        <%= render partial: "shared/article", locals: {article: article} %>
+      <% end %>
     <% end %>
   </div>
 
