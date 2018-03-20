@@ -2,12 +2,12 @@
 <div class="container">
 
   <div class="row" data-product-id="<%= @product.id %>">
-    
     <div class="col-sm-6">
       <% if @product.product_image.present? %>
-      <%= image_tag @product.product_image.url.to_s, class: "img_zoom img-responsive", data_zoom_image: "@product.product_image.url" %>
+      <%= image_tag @product.product_image.url.to_s, class: "img-responsive", id: "zoom", data_zoom_image: "@product.product_image.url" %>
       <% end %>
     </div>
+
     <div class="col-sm-6">
       <h2><%= @product.name %></h2>
 
@@ -29,11 +29,12 @@
         <%= @product.price %>
       </p>
 
-
+      <% if current_user.present? %>
       <p>
         <strong>Color:</strong>
         <%= @product.colour %>
       </p>
+      <% end %>
 
       <% if @product.categorie.present? %>
       <p> 
@@ -41,72 +42,75 @@
         <%= @product.categorie.name %> 
       </p> 
       <% end %>
-      
-      
-      <div class="row">
-        <br>
-        <div class="col-xs-9">
-          <% if current_user.present? %>
-          <%= render partial: "shared/custom_stripe_checkout_button" %>  
-          <% else %>
-          <%= render partial: "signin_before_purchase_modal" %> 
-          <% end %>
-        </div>
-        <div class="col-xs-3">
-          <p>  
-            <span class="badge views">
-            <i class="glyphicon glyphicon-eye-open"></i>
-              <%= @product.views %>
-            </span>
-          </p>   
-        </div>
+    
+    
+    <div class="row">
+      <div class="col-xs-9">
+        <% if current_user.present? %>
+        <%= render partial: "shared/custom_stripe_checkout_button" %>  
+        <% else %>
+        <%= render partial: "signin_before_purchase_modal" %> 
+        <% end %>
+      </div>
+      <div class="col-xs-3"> 
+        <span class="badge views">
+          <i class="glyphicon glyphicon-eye-open"></i>
+          <%= @product.views %>
+        </span> 
       </div>
     </div>
-  </div>
 
-  <div class="row">
-    <% if @product.highest_rating_comment.present? || @product.lowest_rating_comment.present? %>
-      <div class="col-sm-12">
-        <hr>
-        <div class="alert alert-info" style="display:none" role="alert">
-          A new comment was posted!
+    </div><!-- col-sm-6-->
+
+
+    </div> <!-- dataproduct.id -->
+
+    <div class="row">
+      <% if @product.highest_rating_comment.present? || @product.lowest_rating_comment.present? %>
+
+        <div class="col-sm-12">
+          <hr>
+          <div class="alert alert-info" style="display:none" role="alert">
+            A new comment was posted!
+          </div>
+          <h5><strong>Rating</strong></h5>
         </div>
-        <h5><strong>Rating</strong></h5>
-      </div>
-      <div class="col-sm-6">
-        <% if @product.highest_rating_comment.user.first_name.present? %>
-          <p>
-            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-              <em>
-                <%= @product.highest_rating_comment.user.first_name %>
-              </em> 
-              reviewed this product:
-          </p>
-        <% end %>
-        <div class="rated" data-score="<%= @product.highest_rating_comment.rating %>"></div>
-        <p>
-          <%= @product.highest_rating_comment.body %>
-        </p>
-      </div>
-      <div class="col-sm-6">
-        <% if @product.comments.count >= 2 %>
-          <% if @product.lowest_rating_comment.user.first_name.present? %>
+        <div class="col-sm-6">
+          <% if @product.highest_rating_comment.user.first_name.present? %>
             <p>
               <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-              <em>
-                <%= @product.lowest_rating_comment.user.first_name %> 
-              </em> 
-               reviewed this product:
+                <em>
+                  <%= @product.highest_rating_comment.user.first_name %>
+                </em> 
+                reviewed this product:
             </p>
           <% end %>
-          <div class="rated" data-score="<%= @product.lowest_rating_comment.rating %>"></div>
+          <div class="rated" data-score="<%= @product.highest_rating_comment.rating %>"></div>
           <p>
-            <%= @product.lowest_rating_comment.body %>
+            <%= @product.highest_rating_comment.body %>
           </p>
-        <% end %>  
-      </div>
-    <% end %>
-  </div>
+        </div>
+        <div class="col-sm-6">
+          <% if @product.comments.count >= 2 %>
+            <% if @product.lowest_rating_comment.user.first_name.present? %>
+              <p>
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                <em>
+                  <%= @product.lowest_rating_comment.user.first_name %> 
+                </em> 
+                 reviewed this product:
+              </p>
+            <% end %>
+            <div class="rated" data-score="<%= @product.lowest_rating_comment.rating %>"></div>
+            <p>
+              <%= @product.lowest_rating_comment.body %>
+            </p>
+          <% end %>  
+        </div>
+
+      <% end %>
+    </div>
+ 
   
   <div class="row">
     <div class="col-sm-12">
@@ -121,7 +125,7 @@
     <div class="collapse col-sm-12" id="collapseComments">
       <%= render 'comments' %>
     </div>
-  </div>
+  </div> 
 
   <div class="btn-control-group">
     <%= link_to products_path, class: 'btn btn-default' do %>
@@ -141,6 +145,7 @@
     <% end %>
   </div> 
 
-</div>
+ 
+</div> <!-- container -->
 
 
