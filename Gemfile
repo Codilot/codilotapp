@@ -49,6 +49,8 @@ gem 'dalli'
 gem 'memcachier'
 gem 'redis-rails'
 gem 'newrelic_rpm'
+
+#security updates
 gem 'loofah', '~> 2.2', '>= 2.2.1'
 
 
