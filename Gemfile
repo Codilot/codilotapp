@@ -49,6 +49,7 @@ gem 'dalli'
 gem 'memcachier'
 gem 'redis-rails'
 gem 'newrelic_rpm'
+gem 'loofah', '~> 2.2', '>= 2.2.1'
 
 
 group :development, :test do
