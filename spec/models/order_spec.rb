@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Order do 
-
-
+RSpec.describe Order, type: :model do
+ 
+ 
 end

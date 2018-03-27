@@ -12,11 +12,13 @@ describe CommentsController, type: :controller do
   describe 'POST #create' do
 
     context "is created succesfully by a loggedin user" do
+
       before do 
         sign_in user
         @comment = FactoryBot.create(:comment, user: user, product: product)
         product.comments << @comment
       end
+
       
       it "creates new comment" do 
       expect{
@@ -26,28 +28,34 @@ describe CommentsController, type: :controller do
         }.to change(Comment,:count).by(1)
       end
 
+
       it "redirects to product page and adds the new comment" do 
         expect(response).to be_ok
         expect(product.comments.reload.size >= 1).to eq(true)        
       end
+      
     end
-
 
   end
 
 
   context 'DELETE #destroy' do 
+
     before do 
       sign_in admin
       @comment = FactoryBot.create(:comment, user: user, product: product)
       product.comments << @comment
     end
+
     it "allows admin to delete a product" do 
+
       delete :destroy, params: {
         product_id: product.id, id: product.comments.first.id
       }
       expect(response).to redirect_to product_path(product.id)
+
     end
+
   end 
 
 
